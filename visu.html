@@ -23,7 +23,7 @@
 <meta name="author" content="史冬波 续本达" />
 
 
-<meta name="date" content="2023-11-11" />
+<meta name="date" content="2023-11-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -195,9 +195,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="basic.html"><a href="basic.html#r与rtudio的安装"><i class="fa fa-check"></i><b>3.3</b> R与Rtudio的安装</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="basic.html"><a href="basic.html#安装r"><i class="fa fa-check"></i><b>3.3.1</b> 安装R</a></li>
-<li class="chapter" data-level="3.3.2" data-path="basic.html"><a href="basic.html#r安装rstudio"><i class="fa fa-check"></i><b>3.3.2</b> R安装RStudio</a></li>
-<li class="chapter" data-level="3.3.3" data-path="basic.html"><a href="basic.html#组织r代码的三种方式"><i class="fa fa-check"></i><b>3.3.3</b> 组织R代码的三种方式</a></li>
-<li class="chapter" data-level="3.3.4" data-path="basic.html"><a href="basic.html#r代码的组成"><i class="fa fa-check"></i><b>3.3.4</b> R代码的组成</a></li>
+<li class="chapter" data-level="3.3.2" data-path="basic.html"><a href="basic.html#在wsl上安装r语言"><i class="fa fa-check"></i><b>3.3.2</b> 在WSL上安装R语言</a></li>
+<li class="chapter" data-level="3.3.3" data-path="basic.html"><a href="basic.html#r安装rstudio"><i class="fa fa-check"></i><b>3.3.3</b> R安装RStudio</a></li>
+<li class="chapter" data-level="3.3.4" data-path="basic.html"><a href="basic.html#组织r代码的三种方式"><i class="fa fa-check"></i><b>3.3.4</b> 组织R代码的三种方式</a></li>
+<li class="chapter" data-level="3.3.5" data-path="basic.html"><a href="basic.html#r代码的组成"><i class="fa fa-check"></i><b>3.3.5</b> R代码的组成</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="basic.html"><a href="basic.html#r对文件和路径的相关操作"><i class="fa fa-check"></i><b>3.4</b> R对文件和路径的相关操作</a>
 <ul>
@@ -340,11 +341,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="visu.html"><a href="visu.html#图形语法grammar-of-graphics"><i class="fa fa-check"></i><b>6.3</b> 图形语法（Grammar of Graphics）</a></li>
 <li class="chapter" data-level="6.4" data-path="visu.html"><a href="visu.html#ggplot2"><i class="fa fa-check"></i><b>6.4</b> <code>ggplot2</code></a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="visu.html"><a href="visu.html#ggplot2几何对象"><i class="fa fa-check"></i><b>6.4.1</b> <code>ggplot2</code>几何对象</a></li>
-<li class="chapter" data-level="6.4.2" data-path="visu.html"><a href="visu.html#ggplot2的美术属性"><i class="fa fa-check"></i><b>6.4.2</b> <code>ggplot2</code>的美术属性</a></li>
-<li class="chapter" data-level="6.4.3" data-path="visu.html"><a href="visu.html#ggplot2辅助"><i class="fa fa-check"></i><b>6.4.3</b> <code>ggplot2</code>辅助</a></li>
+<li class="chapter" data-level="6.4.1" data-path="visu.html"><a href="visu.html#几何对象"><i class="fa fa-check"></i><b>6.4.1</b> 几何对象</a></li>
+<li class="chapter" data-level="6.4.2" data-path="visu.html"><a href="visu.html#美术属性"><i class="fa fa-check"></i><b>6.4.2</b> 美术属性</a></li>
+<li class="chapter" data-level="6.4.3" data-path="visu.html"><a href="visu.html#统计变换"><i class="fa fa-check"></i><b>6.4.3</b> 统计变换</a></li>
+<li class="chapter" data-level="6.4.4" data-path="visu.html"><a href="visu.html#标尺"><i class="fa fa-check"></i><b>6.4.4</b> 标尺</a></li>
+<li class="chapter" data-level="6.4.5" data-path="visu.html"><a href="visu.html#坐标系"><i class="fa fa-check"></i><b>6.4.5</b> 坐标系</a></li>
+<li class="chapter" data-level="6.4.6" data-path="visu.html"><a href="visu.html#分面"><i class="fa fa-check"></i><b>6.4.6</b> 分面</a></li>
+<li class="chapter" data-level="6.4.7" data-path="visu.html"><a href="visu.html#标签与图例"><i class="fa fa-check"></i><b>6.4.7</b> 标签与图例</a></li>
+<li class="chapter" data-level="6.4.8" data-path="visu.html"><a href="visu.html#主题"><i class="fa fa-check"></i><b>6.4.8</b> 主题</a></li>
+<li class="chapter" data-level="6.4.9" data-path="visu.html"><a href="visu.html#拼接图形"><i class="fa fa-check"></i><b>6.4.9</b> 拼接图形</a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="visu.html"><a href="visu.html#案例did结果的可视化"><i class="fa fa-check"></i><b>6.5</b> 案例：DID结果的可视化</a></li>
+<li class="chapter" data-level="6.5" data-path="visu.html"><a href="visu.html#交互"><i class="fa fa-check"></i><b>6.5</b> 交互</a></li>
 <li class="chapter" data-level="6.6" data-path="visu.html"><a href="visu.html#动图"><i class="fa fa-check"></i><b>6.6</b> 动图</a></li>
 <li class="chapter" data-level="6.7" data-path="visu.html"><a href="visu.html#大屏"><i class="fa fa-check"></i><b>6.7</b> 大屏</a>
 <ul>
@@ -685,7 +692,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-6"><a href="visu.html#cb1-6" tabindex="-1"></a>  <span class="fu">geom_point</span>()  </span></code></pre></div>
 <p><img src="06-visualization_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>太神奇了吧，居然有人写了个包来画恐龙！但是仔细一想，这事儿可能没有那么简单。事出非常必有妖，谁会闲到辛辛苦苦发布一个R包就为了画个恐龙呢。</p>
-<p>果然datasauRus是一个非常有名的数据包，他包括了若干组描述性统计完全一致，但是分布却截然不同的数据集，恰恰说明了可视化的必要性。</p>
+<p>果然datasauRus是一个非常有名的数据包，他包括了若干组描述性统计完全一致，但是分布却截然不同的数据集，恰恰说明了可视化的必要性。
+<img src="06-visualization_files/figure-html/06-visaulization-datasauRus-1.png" width="672" /></p>
 <p>详情可见论文，*Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics through Simulated Annealing**</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="visu.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(datasauRus)</span>
 <span id="cb2-2"><a href="visu.html#cb2-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
@@ -746,50 +754,533 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="ggplot2" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> <code>ggplot2</code><a href="visu.html#ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>讲GG在R语言中实现的又是我们熟悉的大神Wickham，他设计了<code>ggplot2</code>包，<code>ggplot2</code>及其家族现在已经成为统制图的最佳工具。</p>
+<p>将GG在R语言中实现的又是我们熟悉的大神Wickham，他设计了<code>ggplot2</code>包，<code>ggplot2</code>及其家族现在已经成为统制图的最佳工具。</p>
 <p>我们看下发表在经济学人杂志的一篇文章中的图片，图片来源<a href="http://www.economist.com/node/21541178" class="uri">http://www.economist.com/node/21541178</a>。数据来源，</p>
 <p><img src="images/visualization/Economist1.png" width="90%" /></p>
-<p>这幅图首先在视觉呈现非常美观，然后信息传达非常丰富，几乎所有的图形要素都被利用了起来。可以分类总结如下。</p>
+<p>这幅图首先在视觉呈现非常美观，然后信息传达非常丰富，几乎所有的图形要素都被利用了起来。可以分类总结如下：</p>
 <p><img src="images/visualization/Economist2.png" width="90%" /></p>
 <p>本节的任务就是逐步学习<code>ggplot2</code>的要素，并画出此图。教学材料受到哈佛大学<a href="http://tutorials.iq.harvard.edu/">IQSS</a>的启发。数据位于：<a href="https://drive.google.com/file/d/1CyCRpPVqLP-_BWjURiV5127rTiSHWuqe/view?usp=drive_link">EconomistData.csv</a>。</p>
-<div id="ggplot2几何对象" class="section level3 hasAnchor" number="6.4.1">
-<h3><span class="header-section-number">6.4.1</span> <code>ggplot2</code>几何对象<a href="visu.html#ggplot2几何对象" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>ggplot2</code>的语法是先通过<code>ggplot</code>函数指定数据，然后使用<code>+</code>叠加后续绘图动作。我们使用</p>
+<p>总体来说，<code>ggplot</code>作图的标准模板为：</p>
+<pre><code>ggplot(data = &lt;Data&gt;) +
+  &lt;Geom_Function&gt;(mapping = aes(&lt;Mappings&gt;),
+  stat = &lt;Stat&gt;,
+  position = &lt;Position&gt;) +
+  &lt;Coordinate_Function&gt; +
+  &lt;Facet_Function&gt; +
+  &lt;Scale_Function&gt; +
+  &lt;Theme_Function&gt;</code></pre>
+<p><code>ggplot2</code>的语法逻辑为：</p>
+<ol style="list-style-type: decimal">
+<li><p><code>ggplot</code>函数指定数据，然后使用<code>+</code>叠加后续绘图动作；</p></li>
+<li><p><code>geom_</code>函数族（或者<code>stat_</code>函数族）指定特定类型的几何对象；</p></li>
+<li><p><code>aes</code>函数调节几何对象的美术属性；</p></li>
+<li><p><code>coordinate_</code>函数指定坐标系统（可用于画地图）；</p></li>
+<li><p><code>facet_</code>函数进行分面；</p></li>
+<li><p><code>scale</code>函数调节坐标尺；</p></li>
+<li><p><code>theme</code>、<code>lab</code>、<code>guide</code>函数等调节主题、标题、图例等附加属性。</p></li>
+</ol>
+<p>此外，<code>last_plot()</code>可返回上一张图片，<code>ggsave</code>用于图片输出。</p>
+<div id="几何对象" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> 几何对象<a href="visu.html#几何对象" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>接下来，以绘制散点图为例介绍<code>ggplot2</code>的基本语法。以第三章使用的我国211大学发表论文的数据<a href="https://www.dropbox.com/scl/fi/nvbzqkerfaenz1dtgaitx/pub_211.csv?rlkey=n3vjai0a63oju73olrcvha43l&amp;dl=0">pub211.csv</a>为例，使用<code>ggplot</code>函数指定画图数据框为<code>pub_211_sum</code>，<code>aes</code>参数用于指定底图的x轴与y轴对应的变量，然后使用<code>geom_point</code>函数绘制散点图。</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="visu.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb9-2"><a href="visu.html#cb9-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb9-3"><a href="visu.html#cb9-3" tabindex="-1"></a>pub_211 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;pub_211.csv&quot;</span>)</span>
+<span id="cb9-4"><a href="visu.html#cb9-4" tabindex="-1"></a><span class="co"># 选出2022年发文最多的十所学校</span></span>
+<span id="cb9-5"><a href="visu.html#cb9-5" tabindex="-1"></a>top10 <span class="ot">&lt;-</span> pub_211 <span class="sc">%&gt;%</span> </span>
+<span id="cb9-6"><a href="visu.html#cb9-6" tabindex="-1"></a>  <span class="fu">filter</span>(pubyear <span class="sc">==</span> <span class="dv">2022</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-7"><a href="visu.html#cb9-7" tabindex="-1"></a>  <span class="fu">group_by</span>(inst_cn) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-8"><a href="visu.html#cb9-8" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">pubnum_wos =</span> <span class="fu">sum</span>(pubnum_wos)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-9"><a href="visu.html#cb9-9" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(pubnum_wos)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-10"><a href="visu.html#cb9-10" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb9-11"><a href="visu.html#cb9-11" tabindex="-1"></a>top10_pub <span class="ot">&lt;-</span> pub_211 <span class="sc">%&gt;%</span> </span>
+<span id="cb9-12"><a href="visu.html#cb9-12" tabindex="-1"></a>  <span class="fu">semi_join</span>(<span class="at">y =</span> top10,<span class="at">by =</span> <span class="st">&quot;inst_cn&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-13"><a href="visu.html#cb9-13" tabindex="-1"></a>  <span class="fu">filter</span>(pubyear <span class="sc">==</span> <span class="dv">2022</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-14"><a href="visu.html#cb9-14" tabindex="-1"></a>  <span class="fu">group_by</span>(inst_cn,cnsubject) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-15"><a href="visu.html#cb9-15" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">pubnum_wos =</span> <span class="fu">sum</span>(pubnum_wos),</span>
+<span id="cb9-16"><a href="visu.html#cb9-16" tabindex="-1"></a>            <span class="at">totaljif =</span> <span class="fu">sum</span>(totaljif))</span>
+<span id="cb9-17"><a href="visu.html#cb9-17" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="visu.html#cb9-18" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(top10_pub, <span class="fu">aes</span>(<span class="at">x =</span> pubnum_wos, <span class="at">y =</span> totaljif))</span>
+<span id="cb9-19"><a href="visu.html#cb9-19" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> p1 <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb9-20"><a href="visu.html#cb9-20" tabindex="-1"></a><span class="fu">print</span>(p2)</span></code></pre></div>
+<p><img src="06-visualization_files/figure-html/scatter-1.png" width="672" /></p>
 <p><strong>练习题</strong></p>
-<p>导入EconomistData.csv数据，（数据来源：<a href="http://www.transparency.org/content/download/64476/1031428）该数据包括了部分国家的人类发展指数与腐败感知指数。创建一个以" class="uri">http://www.transparency.org/content/download/64476/1031428）该数据包括了部分国家的人类发展指数与腐败感知指数。创建一个以</a> CPI 为x轴，HDI为y轴的散点图。</p>
+<p>导入EconomistData.csv数据，该数据包括了部分国家的人类发展指数与腐败感知指数。创建一个以 CPI 为x轴，HDI为y轴的散点图。</p>
+<p>除散点图外，ggplot还支持类型丰富的几何对象，现将主要类型总结如下：</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="22%" />
+<col width="46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">几何对象</th>
+<th align="left">变量类型</th>
+<th align="left">图类型</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>geom_blank</code></td>
+<td align="left">初始化</td>
+<td align="left">空白画布</td>
+</tr>
+<tr class="even">
+<td align="left"><code>expand_limits</code></td>
+<td align="left">初始化</td>
+<td align="left">扩展画布范围以囊括所有数据</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_curve</code></td>
+<td align="left">初始化</td>
+<td align="left">一条曲线，指定起止点与弧度</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_path</code></td>
+<td align="left">初始化</td>
+<td align="left">点组成的路径</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_polygon</code></td>
+<td align="left">初始化</td>
+<td align="left">多边形</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_rect</code></td>
+<td align="left">初始化</td>
+<td align="left">矩形或方块</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_ribbon</code></td>
+<td align="left">初始化</td>
+<td align="left">带状区域，常用于表示区域的不确定性或置信区间</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_abline</code></td>
+<td align="left">线段</td>
+<td align="left">斜直线</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_hline</code></td>
+<td align="left">线段</td>
+<td align="left">竖线</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_vline</code></td>
+<td align="left">线段</td>
+<td align="left">横线</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_segment</code></td>
+<td align="left">线段</td>
+<td align="left">斜线段</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_spoke</code></td>
+<td align="left">线段</td>
+<td align="left">基于原点的向量或箭头，常用于极坐标</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_area</code></td>
+<td align="left">单连续变量</td>
+<td align="left">向坐标轴的区域</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_density</code></td>
+<td align="left">单连续变量</td>
+<td align="left">核密度分布图</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_dotplot</code></td>
+<td align="left">单连续变量</td>
+<td align="left">分布堆叠图，点的堆叠表示相同数值的重复次数。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_freqpoly</code></td>
+<td align="left">单连续变量</td>
+<td align="left">频率多边形图，连续变量的频率分布情况，是一种直方图的替代方式</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_histogram</code></td>
+<td align="left">单连续变量</td>
+<td align="left">分布直方图</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_qq</code></td>
+<td align="left">单连续变量</td>
+<td align="left">Q-Q 图（Quantile-Quantile Plot）</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_bar</code></td>
+<td align="left">单离散变量</td>
+<td align="left">条形图</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_point</code></td>
+<td align="left">双连续变量</td>
+<td align="left">散点图</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_rug</code></td>
+<td align="left">双连续变量</td>
+<td align="left">轴须图，以类似条形码的方式在数据外侧展示变量分布密度</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_smooth</code></td>
+<td align="left">双连续变量</td>
+<td align="left">平滑拟合线</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_text</code></td>
+<td align="left">双连续变量</td>
+<td align="left">为散点图添加文本标签</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_col</code></td>
+<td align="left">一个离散变量加一个连续变量</td>
+<td align="left">柱状图</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_boxplot</code></td>
+<td align="left">一个离散变量加一个连续变量</td>
+<td align="left">箱线图</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_violin</code></td>
+<td align="left">一个离散变量加一个连续变量</td>
+<td align="left">小提琴图</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_count</code></td>
+<td align="left">双离散变量</td>
+<td align="left">散点密度图，点大小表达该位置点的数量</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_jitter</code></td>
+<td align="left">双离散变量</td>
+<td align="left">抖动散点图，对数据进行随机抖动，以展示离散点的密度分布情况</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_bin2d</code></td>
+<td align="left">双变量</td>
+<td align="left">二维直方图</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_density_2d</code></td>
+<td align="left">双变量</td>
+<td align="left">二维核密度图</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_hex</code></td>
+<td align="left">双变量</td>
+<td align="left">六边形分箱</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_line</code></td>
+<td align="left">双变量</td>
+<td align="left">折线图</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_step</code></td>
+<td align="left">双变量</td>
+<td align="left">阶梯图</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_crossbar</code></td>
+<td align="left">误差变量</td>
+<td align="left">误差条图</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_errorbar</code></td>
+<td align="left">误差变量</td>
+<td align="left">误差雷达图</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_linerange</code></td>
+<td align="left">误差变量</td>
+<td align="left">误差线图</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_pointrange</code></td>
+<td align="left">误差变量</td>
+<td align="left">误差线图（带均值点）</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_map</code></td>
+<td align="left">地理变量</td>
+<td align="left">地图</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_contour</code></td>
+<td align="left">三变量</td>
+<td align="left">等高线图</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_contour_filled</code></td>
+<td align="left">三变量</td>
+<td align="left">与<code>geom_contour</code>配合使用制作带填充的等高线图</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>geom_raster</code></td>
+<td align="left">三变量</td>
+<td align="left">栅格图</td>
+</tr>
+<tr class="even">
+<td align="left"><code>geom_tile</code></td>
+<td align="left">三变量</td>
+<td align="left">热力图</td>
+</tr>
+</tbody>
+</table>
+<p>更多细节请参考，<a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html#geoms" class="uri">https://rstudio.github.io/cheatsheets/html/data-visualization.html#geoms</a>。</p>
 </div>
-<div id="ggplot2的美术属性" class="section level3 hasAnchor" number="6.4.2">
-<h3><span class="header-section-number">6.4.2</span> <code>ggplot2</code>的美术属性<a href="visu.html#ggplot2的美术属性" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="美术属性" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> 美术属性<a href="visu.html#美术属性" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>在<code>geom_point</code>函数中，<code>aes</code>可用于指定几何对象的美术属性。指定美术属性既可使用常量，例如制定颜色为红色（red），也可以使用变量，例如通过学科（cnsubject）来赋值颜色。</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="visu.html#cb10-1" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;red&quot;</span>))</span></code></pre></div>
+<p><img src="06-visualization_files/figure-html/06-visaulization-aes1-1.png" width="672" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="visu.html#cb11-1" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> inst_cn))</span></code></pre></div>
+<img src="06-visualization_files/figure-html/06-visaulization-aes1-2.png" width="672" />
+
+<div class="rmdnote">
+上面图中显示不出图例是因为默认字体不支持中文字体，只需要通过<code>theme(legend.text = element_text(family='SimSun'))</code>指定图例字体即可。
 </div>
-<div id="ggplot2辅助" class="section level3 hasAnchor" number="6.4.3">
-<h3><span class="header-section-number">6.4.3</span> <code>ggplot2</code>辅助<a href="visu.html#ggplot2辅助" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="主题" class="section level4 hasAnchor" number="6.4.3.1">
-<h4><span class="header-section-number">6.4.3.1</span> 主题<a href="visu.html#主题" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="visu.html#cb12-1" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> inst_cn)) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">family=</span><span class="st">&#39;SimSun&#39;</span>))</span></code></pre></div>
+<p><img src="06-visualization_files/figure-html/06-visaulization-aes2-1.png" width="672" /></p>
+<p>使用变量指定美术属性时，会出现两种情形：离散变量与连续变量。以颜色为例，离散变量对应了若干种颜色，而连续变量则对应了渐变的颜色。</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="visu.html#cb13-1" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> pubnum_wos,<span class="at">size =</span> inst_cn)) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">family=</span><span class="st">&#39;SimSun&#39;</span>))</span></code></pre></div>
+<pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
+<p><img src="06-visualization_files/figure-html/06-visaulization-aes3-1.png" width="672" />
+常用的美学属性总结如下：</p>
+<table>
+<colgroup>
+<col width="13%" />
+<col width="18%" />
+<col width="68%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">几何对象</th>
+<th align="left">美术属性</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">all</td>
+<td align="left">color</td>
+<td align="left">颜色，支持色号、文本等方式赋值</td>
+</tr>
+<tr class="even">
+<td align="left">all</td>
+<td align="left">fill</td>
+<td align="left">填充颜色</td>
+</tr>
+<tr class="odd">
+<td align="left">all</td>
+<td align="left">size</td>
+<td align="left">大小</td>
+</tr>
+<tr class="even">
+<td align="left">all</td>
+<td align="left">alpha</td>
+<td align="left">透明度</td>
+</tr>
+<tr class="odd">
+<td align="left">line</td>
+<td align="left">linetype</td>
+<td align="left">线条类型：支持0-6共七种类型</td>
+</tr>
+<tr class="even">
+<td align="left">line</td>
+<td align="left">lineend</td>
+<td align="left">线条结尾：“round”, “butt” (缺省值), “square”</td>
+</tr>
+<tr class="odd">
+<td align="left">line</td>
+<td align="left">linejoin</td>
+<td align="left">线条连接处：“round” (缺省值), “mitre”, “bevel”.</td>
+</tr>
+<tr class="even">
+<td align="left">point</td>
+<td align="left">shape</td>
+<td align="left">点的形状：0-25共26种形状</td>
+</tr>
+<tr class="odd">
+<td align="left">point/line</td>
+<td align="left">stroke</td>
+<td align="left">图形或线条的轮廓</td>
+</tr>
+<tr class="even">
+<td align="left">text</td>
+<td align="left">family</td>
+<td align="left">指定文本的字体</td>
+</tr>
+<tr class="odd">
+<td align="left">text</td>
+<td align="left">fontface</td>
+<td align="left">指定字体样式：“plain”, “bold”, “italic”</td>
+</tr>
+<tr class="even">
+<td align="left">text</td>
+<td align="left">hjust</td>
+<td align="left">纵向位置：top = 1, middle = 0.5, bottom = 0</td>
+</tr>
+<tr class="odd">
+<td align="left">text</td>
+<td align="left">vjust</td>
+<td align="left">横向位置：left = 0, center = 0.5, right = 1</td>
+</tr>
+</tbody>
+</table>
+<p>更多细节可以参考：<a href="https://ggplot2.tidyverse.org/articles/ggplot2-specs.html#colour-and-fill" class="uri">https://ggplot2.tidyverse.org/articles/ggplot2-specs.html#colour-and-fill</a></p>
+<p><strong>练习题</strong></p>
+<p>在上一题的基础上</p>
+<ol style="list-style-type: decimal">
+<li><p>将图的点改为蓝色(blue)；</p></li>
+<li><p>使用Region变量为点着色</p></li>
+</ol>
 </div>
-<div id="调色板" class="section level4 hasAnchor" number="6.4.3.2">
-<h4><span class="header-section-number">6.4.3.2</span> 调色板<a href="visu.html#调色板" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="统计变换" class="section level3 hasAnchor" number="6.4.3">
+<h3><span class="header-section-number">6.4.3</span> 统计变换<a href="visu.html#统计变换" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>在<code>ggplot2</code>中，统计变换函数（statistical transformation functions）用于对数据进行统计计算或转换，以便在图表中呈现不同的数据表现形式。</p>
+<p>例如，<code>stat_summary</code>函数可将数据按照指定的函数进行汇总，例如计算平均值、中位数等，并将汇总结果绘制到图表中。下面的代码中，<code>fun</code>参数指定了计算均值，<code>geom</code>参数制定了转换后的集合对象。</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="visu.html#cb15-1" tabindex="-1"></a><span class="fu">ggplot</span>(top10_pub, <span class="fu">aes</span>(<span class="at">x =</span> inst_cn, <span class="at">y =</span> totaljif)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="visu.html#cb15-2" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">&quot;col&quot;</span>)</span></code></pre></div>
+<p><img src="06-visualization_files/figure-html/06-visaulization-stat1-1.png" width="672" /></p>
+<p>其他统计转换数据包括，<code>stat_function</code>，允许将数学函数应用到图形中。可以使用此函数绘制自定义函数的图形；<code>stat_ecdf</code>，绘制经验累积分布函数，显示数据的累积分布情况；<code>stat_contour</code>用于创建等高线图，展示二维数据的密度分布情况；<code>stat_density</code>用于绘制核密度估计曲线，展示数据的密度分布情况；<code>stat_summary_hex</code>类似于<code>stat_summary</code>，用六边形的方式呈现数据的汇总结果。</p>
+<p>尽管统计转换函数集成了数据转换与绘图，看上去比较方便，但是我们推荐读者实践中还是将数据转换与绘图分开，这样的代码更直观，也更加容易调整。</p>
+</div>
+<div id="标尺" class="section level3 hasAnchor" number="6.4.4">
+<h3><span class="header-section-number">6.4.4</span> 标尺<a href="visu.html#标尺" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>scale_</code>函数族用于调整x轴，y轴以及所有美术属性对应变量的尺度。在使用标尺函数的时候，需要首先明确调整的变量是连续变量还是离散变量。<code>scale_*_continuous</code>将数据的连续取值映射为图形属性的取值，<code>scale_*_discrete</code>将数据的离散取值映射为图形属性的取值。</p>
+<p><code>scale_x_(y_)_continuous/discrete</code>用于调整坐标轴的范围（limits参数）、刻度（breaks，labels参数）以及位置（position参数）等特性。</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="visu.html#cb16-1" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> p1 <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> inst_cn)) <span class="sc">+</span> </span>
+<span id="cb16-2"><a href="visu.html#cb16-2" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">family=</span><span class="st">&#39;SimSun&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="visu.html#cb16-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">size =</span> <span class="fl">0.3</span>) <span class="sc">+</span> </span>
+<span id="cb16-4"><a href="visu.html#cb16-4" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">7000</span>),</span>
+<span id="cb16-5"><a href="visu.html#cb16-5" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">7000</span>,<span class="dv">1000</span>),</span>
+<span id="cb16-6"><a href="visu.html#cb16-6" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;1,000&quot;</span>,<span class="st">&quot;2,000&quot;</span>,</span>
+<span id="cb16-7"><a href="visu.html#cb16-7" tabindex="-1"></a>                                <span class="st">&quot;3,000&quot;</span>,<span class="st">&quot;4,000&quot;</span>,<span class="st">&quot;5,000&quot;</span>,</span>
+<span id="cb16-8"><a href="visu.html#cb16-8" tabindex="-1"></a>                                <span class="st">&quot;6,000&quot;</span>,<span class="st">&quot;7,000&quot;</span>))</span></code></pre></div>
+<pre><code>## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="visu.html#cb18-1" tabindex="-1"></a><span class="fu">print</span>(p3)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="06-visualization_files/figure-html/06-visaulization-scale1-1.png" width="672" /></p>
+<p>其他常用<code>scale</code>函数，<code>scale_*_binned</code>将数据的连续取值映射为离散的统计堆；<code>scale_*_identity</code>使用数据的值作为图形属性的取值
+<code>scale_*_manual(values = c())</code>将数据的离散取值作为手工指定的图形属性的取值；
+<code>scale_*_date(date_labels = "%m/%d"),date_breaks = "2 weeks")</code>将数据值视为日期；<code>scale_*_datetime()</code>将数据视为时间。</p>
+<p>坐标轴比例也可以调节，<code>scale_x_log10</code>以log10比例绘制x轴，
+<code>scale_x_reverse</code>反转x轴方向，<code>scale_x_sqrt</code>以平方根绘制x。</p>
+<p>例如，<code>scale_color_manual</code>函数可以根据个人的喜好来定制数据，后面小节中会介绍如何选择颜色。</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="visu.html#cb20-1" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> inst_cn)) <span class="sc">+</span> </span>
+<span id="cb20-2"><a href="visu.html#cb20-2" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">family=</span><span class="st">&#39;SimSun&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb20-3"><a href="visu.html#cb20-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">size =</span> <span class="fl">0.3</span>) <span class="sc">+</span> </span>
+<span id="cb20-4"><a href="visu.html#cb20-4" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">7000</span>),</span>
+<span id="cb20-5"><a href="visu.html#cb20-5" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">7000</span>,<span class="dv">1000</span>),</span>
+<span id="cb20-6"><a href="visu.html#cb20-6" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;1,000&quot;</span>,<span class="st">&quot;2,000&quot;</span>,</span>
+<span id="cb20-7"><a href="visu.html#cb20-7" tabindex="-1"></a>                                <span class="st">&quot;3,000&quot;</span>,<span class="st">&quot;4,000&quot;</span>,<span class="st">&quot;5,000&quot;</span>,</span>
+<span id="cb20-8"><a href="visu.html#cb20-8" tabindex="-1"></a>                                <span class="st">&quot;6,000&quot;</span>,<span class="st">&quot;7,000&quot;</span>)) <span class="sc">+</span> </span>
+<span id="cb20-9"><a href="visu.html#cb20-9" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#009E73&quot;</span>, <span class="st">&quot;#F0E442&quot;</span>, <span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>,<span class="st">&quot;#6794a7&quot;</span>,<span class="st">&quot;#014d64&quot;</span>,<span class="st">&quot;#01a2d9&quot;</span>))</span></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="06-visualization_files/figure-html/06-visaulization-scale2-1.png" width="672" /></p>
+<p><strong>练习题</strong>
+在上一个题目的基础上，</p>
+<ol style="list-style-type: decimal">
+<li><p>使用scale_x_(y_)修改x轴与y轴的scale，以增加其可读性；</p></li>
+<li><p>使用scale_color_manual函数将散点的颜色调整为c(“red”,”blue”,“green”,“black”,“yellow”,“gray”)，对应颜色的label调整为，c(“Americas”,“Asia Pacific”,“East Europe &amp; Central Asia”,“West Europe”,“East Asia”,“South Asia”)</p></li>
+</ol>
+</div>
+<div id="坐标系" class="section level3 hasAnchor" number="6.4.5">
+<h3><span class="header-section-number">6.4.5</span> 坐标系<a href="visu.html#坐标系" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>gglot2</code>默认使用笛卡尔坐标系，<code>coord_fixed</code>指定x和y单位之间固定长宽比的笛卡尔坐标，<code>coord_polar</code>为极坐标系，<code>coord_trans(y = 'sqrt')</code>使用变量转换后的坐标系，<code>coord_map</code>用于地理绘图中的坐标系。</p>
+</div>
+<div id="分面" class="section level3 hasAnchor" number="6.4.6">
+<h3><span class="header-section-number">6.4.6</span> 分面<a href="visu.html#分面" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>分面（facet）指的是按照某一个或两个分类变量的不同值将数据分为若干个子集，每个数据子集分别在分面上作图，使用<code>facet_wrap</code>可以直接分面，分面可以使用单个变量，也可以使用两个变量。</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="visu.html#cb22-1" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb22-2"><a href="visu.html#cb22-2" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family=</span><span class="st">&#39;SimSun&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb22-3"><a href="visu.html#cb22-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">size =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb22-4"><a href="visu.html#cb22-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> inst_cn)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="06-visualization_files/figure-html/06-visaulization-facet1-1.png" width="672" /></p>
+</div>
+<div id="标签与图例" class="section level3 hasAnchor" number="6.4.7">
+<h3><span class="header-section-number">6.4.7</span> 标签与图例<a href="visu.html#标签与图例" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>labs</code>函数用于标记图中的元素，其<code>x/y</code>参数标注坐标轴，<code>title</code>参数标注图标题，<code>subtitle</code>标注图的子标题，<code>caption</code>标注图说明。</p>
+<p><code>guides</code>函数用于设置图例，常用的包括取消图例（设定对应美术属性为none），以及设置图例位置<code>theme(legend.position = "bottom")</code>。</p>
+<p><code>annotate</code>函数可以直接在图上手工添加文本。</p>
+</div>
+<div id="主题" class="section level3 hasAnchor" number="6.4.8">
+<h3><span class="header-section-number">6.4.8</span> 主题<a href="visu.html#主题" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>一张图里面的格式可以统称为主题，通过<code>theme</code>函数可以对图的每一处细节进行调整，可以调整的选项非常丰富，可以查看theme函数的帮助文档来逐步调整。</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="visu.html#cb24-1" tabindex="-1"></a>?theme</span></code></pre></div>
+<p>此外，一些常用的格式被封装在一些主题当中，例如<code>theme_bw()</code>，<code>theme_classic()</code>，<code>theme_minimal()</code>，调用这些主题会覆盖掉主题的设置。</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="visu.html#cb25-1" tabindex="-1"></a>p3 <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="06-visualization_files/figure-html/06-visaulization-theme2-1.png" width="672" /></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="visu.html#cb27-1" tabindex="-1"></a>p3 <span class="sc">+</span> <span class="fu">theme_classic</span>()</span></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="06-visualization_files/figure-html/06-visaulization-theme2-2.png" width="672" /></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="visu.html#cb29-1" tabindex="-1"></a>p3 <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="06-visualization_files/figure-html/06-visaulization-theme2-3.png" width="672" /></p>
+<p><code>ggthemes</code>包提供了更丰富的格式主题，</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="visu.html#cb31-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(ggthemes)) <span class="fu">install.packages</span>(<span class="st">&quot;ggthemes&quot;</span>)</span></code></pre></div>
+<pre><code>## Loading required package: ggthemes</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="visu.html#cb33-1" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb33-2"><a href="visu.html#cb33-2" tabindex="-1"></a>p3 <span class="sc">+</span> <span class="fu">theme_stata</span>()</span></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="06-visualization_files/figure-html/06-visaulization-theme3-1.png" width="672" /></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="visu.html#cb35-1" tabindex="-1"></a>p3 <span class="sc">+</span> <span class="fu">theme_economist</span>()</span></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="06-visualization_files/figure-html/06-visaulization-theme3-2.png" width="672" /></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="visu.html#cb37-1" tabindex="-1"></a>p3 <span class="sc">+</span> <span class="fu">theme_wsj</span>()</span></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="06-visualization_files/figure-html/06-visaulization-theme3-3.png" width="672" /></p>
+<p>theme的另一种用法为讲自己设置的格式储存为主题，用于后续的图形中简单调用。</p>
+<p><strong>练习题</strong></p>
+<p>利用theme函数的丰富参数，绘制终极图形。</p>
+</div>
+<div id="拼接图形" class="section level3 hasAnchor" number="6.4.9">
+<h3><span class="header-section-number">6.4.9</span> 拼接图形<a href="visu.html#拼接图形" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="调色板" class="section level4 hasAnchor" number="6.4.9.1">
+<h4><span class="header-section-number">6.4.9.1</span> 调色板<a href="visu.html#调色板" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>选择优雅的颜色是高质量数据可视化的保障。如果不是艺术造诣很高的话，选择成熟的配色是最安全的选择。<code>ggthemes</code>包封装了多种成熟的主题，<code>ggsci</code>则包括了多种杂志的配色方案，我们可以使用<code>scales</code>包的show_col函数来查看色号。</p>
 <p>例如，我们要查看并使用经济学人杂志的调色板，可以用下面的代码</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="visu.html#cb8-1" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb8-2"><a href="visu.html#cb8-2" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
-<span id="cb8-3"><a href="visu.html#cb8-3" tabindex="-1"></a><span class="fu">library</span>(ggsci)</span>
-<span id="cb8-4"><a href="visu.html#cb8-4" tabindex="-1"></a><span class="fu">show_col</span>(<span class="fu">economist_pal</span>()(<span class="dv">9</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="visu.html#cb39-1" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb39-2"><a href="visu.html#cb39-2" tabindex="-1"></a><span class="fu">library</span>(scales)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;scales&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:readr&#39;:
+## 
+##     col_factor</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="visu.html#cb42-1" tabindex="-1"></a><span class="fu">library</span>(ggsci)</span>
+<span id="cb42-2"><a href="visu.html#cb42-2" tabindex="-1"></a><span class="fu">show_col</span>(<span class="fu">economist_pal</span>()(<span class="dv">9</span>))</span></code></pre></div>
 <p><img src="06-visualization_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="visu.html#cb9-1" tabindex="-1"></a><span class="fu">economist_pal</span>()(<span class="dv">9</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="visu.html#cb43-1" tabindex="-1"></a><span class="fu">economist_pal</span>()(<span class="dv">9</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;#6794a7&quot; &quot;#014d64&quot; &quot;#01a2d9&quot; &quot;#7ad2f6&quot; &quot;#00887d&quot; &quot;#76c0c1&quot; &quot;#7c260b&quot;
 ## [8] &quot;#ee8f71&quot; &quot;#adadad&quot;</code></pre>
 <p>如果要使用science杂志的配色，可以用下面的代码。</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="visu.html#cb11-1" tabindex="-1"></a><span class="fu">show_col</span>(<span class="fu">pal_aaas</span>()(<span class="dv">9</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="visu.html#cb45-1" tabindex="-1"></a><span class="fu">show_col</span>(<span class="fu">pal_aaas</span>()(<span class="dv">9</span>))</span></code></pre></div>
 <p><img src="06-visualization_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="visu.html#cb12-1" tabindex="-1"></a><span class="fu">pal_aaas</span>()(<span class="dv">9</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="visu.html#cb46-1" tabindex="-1"></a><span class="fu">pal_aaas</span>()(<span class="dv">9</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;#3B4992FF&quot; &quot;#EE0000FF&quot; &quot;#008B45FF&quot; &quot;#631879FF&quot; &quot;#008280FF&quot; &quot;#BB0021FF&quot;
 ## [7] &quot;#5F559BFF&quot; &quot;#A20056FF&quot; &quot;#808180FF&quot;</code></pre>
 <p>当然，艺术造诣和编程能力并不是互斥的技能点。例如，R语言社区资深开发者（<code>ggplot2</code>包的作者）、计算认知科学家Danielle Navarro就是一名计算艺术家（computational artist）。下面是她的作品<em>Dancer</em>，更多作品可以浏览https://art.djnavarro.net/。</p>
+<pre><code>The munsell package, by Charlotte Wickham, makes it easy to choose specific colours using a system designed by Albert H. Munsell. If you invest a little in learning the system, it provides a convenient way of specifying aesthetically pleasing colours.
+munsell::mnsl(&quot;5PB 5/10&quot;)
+#&gt; [1] &quot;#447DBF&quot;</code></pre>
 </div>
 </div>
 </div>
-<div id="案例did结果的可视化" class="section level2 hasAnchor" number="6.5">
-<h2><span class="header-section-number">6.5</span> 案例：DID结果的可视化<a href="visu.html#案例did结果的可视化" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="交互" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> 交互<a href="visu.html#交互" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
 <div id="动图" class="section level2 hasAnchor" number="6.6">
 <h2><span class="header-section-number">6.6</span> 动图<a href="visu.html#动图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
