@@ -20,7 +20,7 @@
 
 单位与变量的关系
 
-在操作层面，分析单位是由自变量的设计决定的，而观测单位是由因变量的设计决定的。在介绍理论与模型的章节中，我们提到当前的理论主要是关注两个变量之间的关系。因此，此处的自变量指的是我们关心的核心自变量(variable of interest)。所以才说，分析单位是实证研究的钥匙，当我们开始一项研究的时候，第一个要回答的问题便是这个研究的自变量与因变量分别是在什么"单位"上测量的。同样的道理，当我们去精度别人的论文时，首先要理解的便是他的回归中的分析单位与观测单位。如果我们看到识别模型的为 $$y_{i,j,t} = \alpha + \beta \times x_{j,t} + \epsilon_{i,j,t}$$
+在操作层面，分析单位是由自变量的设计决定的，而观测单位是由因变量的设计决定的。在介绍理论与模型的章节中，我们提到当前的理论主要是关注两个变量之间的关系。因此，此处的自变量指的是我们关心的核心自变量(variable of interest)。所以才说，分析单位是实证研究的钥匙，当我们开始一项研究的时候，第一个要回答的问题便是这个研究的自变量与因变量分别是在什么"单位"上测量的。同样的道理，当我们去精读别人的论文时，首先要理解的便是他的回归中的分析单位与观测单位。如果我们看到识别模型的为 $$y_{i,j,t} = \alpha + \beta \times x_{j,t} + \epsilon_{i,j,t}$$
 
 我们便可以确定此处的分析单位是{j,t}，而观测单位是{i,j,t}，在回归表中的观测值数量（样本大小N）应该等于$I \times J \times T$。
 
@@ -66,7 +66,7 @@ Hadley在他的论文中总结了5种最常见的凌乱点：
 4.  存在两个及以上的观测单元
 5.  同一组观测被存在多行中
 
-当然，我们永远不能低估数据的凌乱程度，在实际数据分析时遇到超出想象的情形也无需大惊小怪。
+当然，我们永远不能低估数据的凌乱程度，在实际数据分析时遇到超出想象的情形也无需大惊小怪
 
 ## 关系代数
 
@@ -74,7 +74,7 @@ Hadley在他的论文中总结了5种最常见的凌乱点：
 
 关系代数定义了使用表格组织数据所对应的数据运算。实际上，表格可以表示一切的数据，因此定义出一套简洁高效的基于表格的运算，就可以实现数据计算的正交分解，一部分计算机科学家可以专注于优化关系代数的实现效率，而其他人则只用了解最简单的约定来完成自己数据分析工作，可充分利用前者的集体智慧。因此，关系代数是表格数据处理的最佳工具。
 
-关系代数将表格的行视作集合，列视作属性。经济学里面对表格的理解反而更直接，行对应于观测，列对应于变量。
+关系代数将表格的行视作集合，列视作属性。经济学里面对表格的理解反而更直接，行对应于观测，列对应于变量。高度概括起来就是一句话：一切都是关系，关系就是表格。
 
 关系代数运算包括：
 
@@ -86,18 +86,262 @@ Hadley在他的论文中总结了5种最常见的凌乱点：
 
 - 关系运算：两个表格之间连接，分为左（右）连接、内连接、外连接。
 
-- 分组运算
+- 分组与聚集运算：一张大表聚集成小表，转换unit
 
 现在看起来关系代数是如此简介明了，但实际上关系代数的发展为数据库技术的应用与普及扫清了障碍，也为当代大数据与人工智能奠定了基础。相关研究诞生了1981年（Edgar F. Codd）和2014年两届图灵奖（Michael Stonebraker）。
 
 参考资料：Hellerstein, Joseph M. and Michael Stonebraker. Readings in Database Systems.
 
 
-## SQL语言
+### SQL语言
 
-### MySQL
+SQL是Structured Query Language，是关系数据库的基本语言。关系型数据库是以关系代数为基础的数据管理程序，是对关系代数的程序实现。SQL是一种描述型语言，描述选取什么的数据出来。尽管SQL也有写入数据的语法，但是在使用中往往读的次数远大于写的次数。
 
-### Postgresql
+当前主要的开源关系型数据库有三个：MariaDB (MySQL 的后继)、PostgreSQL以及SQLite。MySQL目前使用最广泛；PostgreSQL支持商用开发并包括了灵活的NoSQL语法与数据，被其拥趸认为是未来最主流的选择，SQLite是轻量级数据库用于教学与小型网络数据。
+
+在`R`语言中的data.frame数据结构整合了SQL的思想，使其成为处理表格数据的最佳工具。`Python`社区受到`R`的影响，开发了`pandas`包来实现data.frame及其基本操作。
+
+`MapReduce`分布式大数据算法也受到关系代数的影响，一般都会使用关系代数作为平台高级接口。例如，`Hadoop`生态圈和`Spark`等。
+
+尽管本书更推荐PostgreSQL作为服务器数据库的选择，但是考虑到MySQL的应用范围, 本书也会花篇幅介绍MySQL。
+
+## SQLite3
+
+### 安装
+
+Linux用户使用`apt install sqlite3`，macOS用户使用`brew install sqlite3`来安装。可以使用客户端`sqlitebrowser`提供的窗口界面浏览数据库，分别使用`apt`与`brew`安装。
+
+### 数据类型
+
+sqlite支持的数据类型如下：
+
+|变量|类型|
+|:-----|:----------|
+|NULL|缺失值|
+|INTEGER|整数|
+|REAL|8字节的浮点数|
+|TEXT|文本长度不限|
+|BLOB|二进制对象|
+
+### 新建数据库与表格
+
+`sqlite`是轻量级数据库，每个数据库单独储存在一个`db`文件中。使用`sqlite3 testDB.db`来新建数据库。
+
+一般约定数据库语言的关键字全部使用大写字母，命令使用`;`结束。
+
+除去直接从外部读入数据外，还可以通过`CREATE`命令与`INSERT`命令创建表格并插入数据。
+
+```
+CREATE TABLE A (ID INTEGER, name TEXT, age INTEGER, gender TEXT);
+INSERT INTO A VALUES(1, '张三', 23, 'M');
+INSERT INTO A VALUES(2, '李四', 24, 'M');
+INSERT INTO A VALUES(3, '王二', 22, 'F');
+INSERT INTO A VALUES(4, '赵五', 23, 'M');
+```
+
+在SQL语言中，一切命令都是查询，使用`SELECT`，例如`SELECT * FROM A;`
+
+### 集合运算
+
+交运算是INTERSECT，并运算是UNION，补运算是EXCEPT。
+
+```
+CREATE TABLE B (ID INTEGER, name TEXT, age INTEGER, gender TEXT);
+INSERT INTO B VALUES (2, '李四', 24, 'M'),(3, '王二', 22, 'F'),(4, '赵五', 23, 'M'),(5, '刘六', 21, 'F');
+SELECT * FROM A INTERSECT SELECT * FROM B;
+SELECT * FROM A UNION SELECT * FROM B;
+SELECT * FROM A EXCEPT SELECT * FROM B;
+```
+
+### 线性运算
+
+#### 投影
+
+使用`SELECT`命令来选择做投影运算，选择特定的列，对于大表，查询时要加上LIMIT关键字来限制选出的行数，避免卡死进程。
+
+```
+SELECT ID FROM A LIMIT 1;
+```
+
+#### 选取
+
+WHERE关键字配合差查询语句起到过滤的作用，可以搭配等式与不等式、IS NULL、BETWEEN、IN、LIKE等表达式使用。
+
+```
+SELECT * FROM A WHERE ID = 1;
+SELECT * FROM A WHERE ID > 1;
+SELECT * FROM A WHERE ID BETWEEN 1 AND 3;
+SELECT * FROM A WHERE name LIKE '张%';
+SELECT * FROM A WHERE age IN (21,24);
+```
+
+#### 笛卡尔积
+
+笛卡尔积使用CROSS JOIN实现
+
+```
+SELECT A.ID,B.NAME FROM A CROSS JOIN B;
+```
+
+或者直接联合查询
+
+```
+SELECT * FROM A,B;
+```
+
+#### 扩张
+
+ALTER TABLE 命令用于表格修改，`UPDATE`命令用于修改列的值。
+
+```
+ALTER TABLE A ADD COLUMN score real;
+UPDATE A SET score = 0;
+UPDATE A SET score = 60 WHERE ID = 1;
+```
+
+注意，数据库的思想是表格查询远大于表格修改，表格如果需要频繁修改，应该使用外部工具，例如R或者Python来处理。
+
+### 数据连接
+
+三种连接方式对应：INNER JOIN，LEFT JOIN，FULL OUTER JOIN，ON关键字表示匹配条件
+
+```
+SELECT A.ID, B.NAME FROM A INNER JOIN B ON A.ID = B.ID;
+```
+
+### 数据分组与汇总
+
+分组使用GROUP B， 可以搭配函数使用来进行汇总
+
+```
+SELECT COUNT(*), gender FROM A GROUP BY gender;
+```
+
+### 其他
+
+排序使用ORDRR BY，删除使用DROP
+
+
+### 数据读写
+
+csv数据读入命令如下
+
+```
+.mode csv
+.import /Users/birdstone/dropbox/bigdata_econ_2023/data/pub_211.csv pub_211
+```
+
+调整模式使得，可以查询到表格的表头
+
+```
+.header on
+.mode column
+pragma table_info('pub_211');
+SELECT * FROM pub_211 LIMIT 10;
+```
+
+
+使用output命令可以转存数据成为sql语句
+
+```
+.output /Users/birdstone/dropbox/bigdata_econ_2023/data/new.sql
+.dump pub_211
+.quit
+```
+
+### 索引与键
+
+索引算法将数据的不重复的信息储存在一个B-tree当中，查询建立索引的列。如果不使用索引，每次查询都要遍历整个表，使用索引可以极大改善查询速度。因此建议每次查询之前都确认是否能使用索引。
+
+```
+CREATE INDEX inst_index ON pub_211(inst_cn, pubyear);
+SELECT * FROM pub_211 WHERE inst_cn = "湖南大学" and pubyear = 2022;
+```
+
+## MySQL
+
+#### 安装
+
+macOS中自带了MySQL，可以在`settings`搜索`MySQL`来找到并开启。
+
+也可以使用`brew`管理器来安装，具体命令如下：
+
+```
+brew update
+brew install mysql
+```
+
+通过`brew`安装的mysql会在路径`/usr/local/Cellar`，启动文件`mysql.server`位于`/usr/local/Cellar/mysql/{版本号}/support-files`内。
+
+在启动mysql之前，需要做如下初始化操作。
+
+1. 进入`/usr/local/Cellar/mysql/{版本号}`，执行命令`bin/mysqld --initialize-insecure --user=mysql`初始化储存数据的路径，此时root账号没有设置密码。
+
+2. 进入于`/usr/local/Cellar/mysql/{版本号}/support-files`，执行命令`mysql.server start`启动mysql（`mysql.server stop`为关闭mysql命令）。
+
+3. 启动完成后，使用`mysql -u root --skip-password`登录mysql，并使用`ALTER USER 'root'@'localhost' IDENTIFIED BY 'root-password'`修改密码。
+
+\BeginKnitrBlock{rmdnote}<div class="rmdnote">关于PID报错，“The server quit without updating PID file”，是一个指向不明确的报错。很多原因都可能指向这个错误，直接搜索该错误会得出完全不同的解决方案。在实际处理过程中，应该去看错误文件“username.local.err”，再根据文件内部的详细描述来搜索具体问题的解决方案、</div>\EndKnitrBlock{rmdnote}
+
+### 基本命令
+
+MySQL的绝大多数命令与SQLite相同，这里列举出来不同的地方。
+
+第一个不同的地方是新建数据库与展示数据表格。
+
+```
+CREATE DATABASE testDB;
+SHOW DATABASES;
+USE testDB;
+SHOW TABLES;
+DESC A;
+```
+
+第二个不同地方是读写数据，读入数据使用LOAD DATA INFILE
+
+```
+LOAD DATA INFILE "~/pub_211.csv" INTO TABLE pub_211 FIELDS TERMINATED BY "," LINES TERMINATED BY "\n" IGNORE 1 lines;
+```
+
+`FIELDS TERMINATED BY``指定数据的分列符，` LINES TERMINATED BY`指定分行符，`IGNORE`表示导入时忽略表头。
+
+导出数据使用`SELECT * INTO OUTFILE`
+
+```
+SELECT * INTO OUTFILE "~/pub_211new.csv" FROM  pub_211 FIELDS TERMINATED BY "," LINES TERMINATED BY "\n" IGNORE 1 lines;
+```
+
+转存数据使用mysqldump
+
+```
+mysqldump db_name > backup-file.sql
+```
+
+读入dump出的数据库使用mysql命令
+
+```
+mysql db_name < backup-file.sql
+```
+
+最后，MySQL是面向多用户的应用场景，因此需要管理用户权限。使用root用户登录后，可以使用如下命令创建新用户。
+
+```
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+```
+
+上述命令中，username为用户名，'@'后面指定该用户可以使用的服务器地址，localhost表示该用户仅限于登录本机后使用，password是用户密码。
+
+使用GRANT命令修改用户权限。
+
+```
+GRANT SELECT ON db.table TO 'username'@'localhost';
+```
+
+上述命令表示赋予username在数据库db总的table表的查询权限。
+
+
+## Postgresql
+
 
 ## dplyr
 
@@ -420,7 +664,7 @@ transmute(score, total = 0.35*(hw1+hw2+hw3)/3+0.65*final)
 |`dense_rank`        |当前行的排名，排名不间断|
 |`min_rank`        |当前行的排名，排名允许间断，最大排名数与行数相同|
 |`percent_rank`        |当前行的百分比排名           |
-|`row_numbers``        |当前行数|
+|`row_numbers`        |当前行数|
 
 **课堂练习**
 
@@ -979,20 +1223,20 @@ paper %>% sample(10)
 
 ```
 ## # A tibble: 2,535 × 10
-##     type addr         startyear givenname auseq pub_year fullname uniqueID wos  
-##    <dbl> <chr>            <dbl> <chr>     <dbl>    <dbl> <chr>    <chr>    <chr>
-##  1     2 natl inst a…      2006 C             5     2009 jinc     1_91     natl…
-##  2     1 natl inst a…      2006 CHUANHONG     1     2009 jinchua… 1_91     natl…
-##  3     1 univ calif …      2006 JUN           2     2010 zhangjun 1_449    univ…
-##  4     1 univ calif …      2006 JUN           4     2010 zhangjun 1_449    univ…
-##  5     1 univ calif …      2006 JUN           7     2012 zhangjun 1_449    univ…
-##  6     1 univ calif …      2006 JUN           3     2012 zhangjun 1_449    univ…
-##  7     1 natl inst a…      2006 CHUANHONG     1     2008 jinchua… 1_91     natl…
-##  8     1 univ virgin…      2006 JIWEI         2     2008 lujiwei  0_51     univ…
-##  9     1 peking univ…      2006 CHUANHONG     3     2008 jinchua… 1_91     peki…
-## 10     1 peking univ…      2006 CHUANHONG     3     2008 jinchua… 1_91     peki…
+##    item_type        addr    auseq ut_char startyear surname  type wos   fullname
+##    <chr>            <chr>   <dbl>   <dbl>     <dbl> <chr>   <dbl> <chr> <chr>   
+##  1 Meeting Abstract natl i…     5 2.08e11      2006 JIN         2 natl… jinc    
+##  2 Meeting Abstract natl i…     1 2.08e11      2006 JIN         1 natl… jinchua…
+##  3 Meeting Abstract univ c…     2 2.08e11      2006 ZHANG       1 univ… zhangjun
+##  4 Meeting Abstract univ c…     4 2.08e11      2006 ZHANG       1 univ… zhangjun
+##  5 Meeting Abstract univ c…     7 2.09e11      2006 ZHANG       1 univ… zhangjun
+##  6 Meeting Abstract univ c…     3 2.09e11      2006 ZHANG       1 univ… zhangjun
+##  7 Article          natl i…     1 2.52e11      2006 JIN         1 natl… jinchua…
+##  8 Article          univ v…     2 2.53e11      2006 LU          1 univ… lujiwei 
+##  9 Article          peking…     3 2.53e11      2006 JIN         1 peki… jinchua…
+## 10 Article          peking…     3 2.53e11      2006 JIN         1 peki… jinchua…
 ## # ℹ 2,525 more rows
-## # ℹ 1 more variable: item_type <chr>
+## # ℹ 1 more variable: givenname <chr>
 ```
 
 ### 去重复
@@ -1168,8 +1412,113 @@ paper1 %>% bind_rows(paper2)
 
 计算科学家每年发表的论文之后，对该数据滞后一年。
 
-
 ## 数据库的连接
+
+虽然SQL中也可以定义变量，使用流程控制语句与函数，但是语法并不友好，因此不推荐。如果涉及到循环等复杂的程序结构，可以使用外部程序调用SQL的API。
+
+### R与数据库
+
+R语言中使用`DBI`（Database Interface）包以及对应的`RMySQL`包和`RPostgreSQL`来操纵SQL。
+
+#### 数据库的连接与关闭
+
+db.connect函数用于建立R与数据库之间的联系。`RSQLite`包是R内建的，因此可以直接新建SQLite数据库
+
+```r
+mydb <- dbConnect(RSQLite::SQLite(), dbname = "my-db.sqlite")
+```
+
+连接`MySQL`则需要加载`RMySQL`包，`dbname`用于指定数据库名称，`username`和`password`对应登录密码，`host`对应数据库主机地址，如果是本地则为localhost，`port`用于指定端口。
+
+
+```r
+mydb <- dbConnect(RMySQL::MySQL(), 
+                  dbname = "test",
+                  username = "user",
+                  password = "pwd**",
+                  host = "192.168.1.100",
+                  port = 8881)
+```
+
+理解PostgreSQL方法类似使用`RPostgreSQL`包。
+
+
+```r
+drv <- dbDriver("PostgreSQL")
+mydb <- dbConnect(drv,
+                  dbname = "test",
+                  username = "user",
+                  password = "pwd**",
+                  host = "192.168.1.100",
+                  port = 551)
+```
+
+`dbDisconnect(mydb)`用于关闭与数据库的连接。
+
+#### 查询数据
+
+使用`dbGetQuery`函数可以将SELECT语句查询的语句载入内存
+
+
+```r
+dbGetQuery(mydb, statement = 'SELECT * FROM A LIMIT 5;')
+```
+
+#### 执行语句
+
+`dbExecute`可以执行出查询之外的其他语句，例如`UPDATE`，`INSERT`和`DELETE`等。
+
+
+```r
+dbExecute(mydb, 'DROP TABLE A')
+```
+
+#### 写入数据
+
+`dbWriteTable`可将内存中的数据写入数据库，例如，
+
+
+```r
+dbWriteTable(mydb, "A", A)
+```
+
+### Python与数据库
+
+Python中分别使用`sqlite`，`MySQLdb`与`psycopg2`连接数据库。以psycopg2为例，WSL与macOS先安装psycopg2模块。
+
+```
+pip3 install python-psycopg2
+```
+
+或者
+```
+apt install python-psycopg2
+```
+
+#### 数据库的连接与关闭
+
+
+```python
+import psycopg2
+# 连接数据库
+conn = psycopg2.connect("dbname=test user=postgres")
+# 建立执行指针
+cur = conn.cursor()
+# 关闭连接
+conn.close()
+```
+
+#### 执行命令
+
+
+```python
+# 执行命令
+cur.execute("SELECT * FROM my_data")
+
+# 获取查询数据
+records = cur.fetchall()
+```
+
 
 ## data.table
 

@@ -37,12 +37,29 @@ brew install python3
 
 ### 编辑器
 
-`Python`有一个增强式编译环境，`Ipython`可用于交互式编程。还提供了`Jupyter`，是`IPython`发展而来的可以在网页上进行交互式编程的环境。它的交互性更强，可以规避掉命令行，上手容易，适合写教程。但是，网页并不能替代编辑器，不适合写大段程序，也没有批量处理能力。如果是只是学会了`Jupyter`就以为自己学会了编程，到处招摇过市，会暴露自己的无知与傲慢。因此，不推荐大家将其作为编辑器使用。
+`Python`有一个增强式编译环境，`Ipython`可用于交互式编程。还提供了`Jupyter Notebook`，是`IPython`发展而来的可以在网页上进行交互式编程的环境。它的交互性更强，可以规避掉命令行，上手容易，适合写教程。
+
+
+但是，网页并不能替代编辑器，不适合写大段程序，也没有批量处理能力。如果是只是学会了`Jupyter`就以为自己学会了编程，到处招摇过市，会暴露自己的无知与傲慢。因此，不推荐大家将其作为编辑器使用。
+
+
+### Pycharm的安装与教育许可证
 
 我们推荐`Pycharm Professional`作为`Python`的编辑器（[下载地址](https://www.jetbrains.com/pycharm/download/?section=mac)），这是一款不逊色于`Rstudio`的编辑器，且为教育机构用户提供免费的权限。`Pycharm`不仅继承了语法高亮、自动补全以及版本控制等基本功能，更是集合了远程服务器编译功能，让远程调试非常便捷，这是一个`Rstudio`都没有的功能。同时，`Pycharm`也支持跨语言编辑。
 
-**这里缺一个pycharm教程（后面补上）**。
+安装之后请在<https://www.jetbrains.com/shop/eform/students>申请教育许可证。建议使用“官方文件”认证的方式。
 
+<img src="images/pybasic/pycharm.png" width="90%" />
+
+打开`Pycharm`的第一步是新建项目，新建项目是要确定项目路径与编译代码的`Python`路径。Windows系统读者注意要使用WSL环境中的`python`，具体配置方法见视频。
+
+<img src="images/pybasic/pycharm2.png" width="90%" />
+
+这里对应的习惯是一个研究项目对应一个路径，其实这样的习惯在`R`中也应该学习。
+
+`Pycharm`的窗口环境如下：
+
+<img src="images/pybasic/pycharm3.png" width="90%" />
 
 此外`Rstudio`也是可以兼容python的，使用`reticulate::repl_python()`即可将`Console`的编译环境变成`python`环境。在做一些小命令尝试的时候，可以直接在Rtudio中编程，而不需要特别转换工作环境。毕竟，任何环境的转换都是需要成本的。
 
@@ -62,7 +79,7 @@ print(a)
 
 ## 数据类型
 
-`Python`有物种数据类型：整型（精度无限的整数）、浮点型（64位高精度小数）、字符串和`None`。字符串引号（单引号或双引号）标注、布尔型（`Ture`和`False`）。
+`Python`有五种数据类型：整型（精度无限的整数）、浮点型（64位高精度小数）、字符串和`None`。字符串引号（单引号或双引号）标注、布尔型（`Ture`和`False`）。
 
 `None`是`Python`中一个特别的值，即不是整数也不是浮点数，属于一种独有的类型。可以代表很多含义：“空”或者“没有”，或者“无法表达”，或者“出错了”、“非法”。转换为布尔类型时，None 的赋值为“假”。
 
@@ -1220,6 +1237,7 @@ with open("log.txt","a") as f:
 |`chdir`|改变当前目录|
 |`getcwd`|查看当前目录|
 |`rmdir`|删除目录|
+
 
 ## 案例：获取高德地图地址信息
 

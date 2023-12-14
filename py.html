@@ -23,7 +23,7 @@
 <meta name="author" content="史冬波 续本达" />
 
 
-<meta name="date" content="2023-11-11" />
+<meta name="date" content="2023-11-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,6 +56,12 @@
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.10/grViz.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -195,9 +201,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="basic.html"><a href="basic.html#r与rtudio的安装"><i class="fa fa-check"></i><b>3.3</b> R与Rtudio的安装</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="basic.html"><a href="basic.html#安装r"><i class="fa fa-check"></i><b>3.3.1</b> 安装R</a></li>
-<li class="chapter" data-level="3.3.2" data-path="basic.html"><a href="basic.html#r安装rstudio"><i class="fa fa-check"></i><b>3.3.2</b> R安装RStudio</a></li>
-<li class="chapter" data-level="3.3.3" data-path="basic.html"><a href="basic.html#组织r代码的三种方式"><i class="fa fa-check"></i><b>3.3.3</b> 组织R代码的三种方式</a></li>
-<li class="chapter" data-level="3.3.4" data-path="basic.html"><a href="basic.html#r代码的组成"><i class="fa fa-check"></i><b>3.3.4</b> R代码的组成</a></li>
+<li class="chapter" data-level="3.3.2" data-path="basic.html"><a href="basic.html#在wsl上安装r语言"><i class="fa fa-check"></i><b>3.3.2</b> 在WSL上安装R语言</a></li>
+<li class="chapter" data-level="3.3.3" data-path="basic.html"><a href="basic.html#r安装rstudio"><i class="fa fa-check"></i><b>3.3.3</b> R安装RStudio</a></li>
+<li class="chapter" data-level="3.3.4" data-path="basic.html"><a href="basic.html#组织r代码的三种方式"><i class="fa fa-check"></i><b>3.3.4</b> 组织R代码的三种方式</a></li>
+<li class="chapter" data-level="3.3.5" data-path="basic.html"><a href="basic.html#r代码的组成"><i class="fa fa-check"></i><b>3.3.5</b> R代码的组成</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="basic.html"><a href="basic.html#r对文件和路径的相关操作"><i class="fa fa-check"></i><b>3.4</b> R对文件和路径的相关操作</a>
 <ul>
@@ -340,16 +347,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="visu.html"><a href="visu.html#图形语法grammar-of-graphics"><i class="fa fa-check"></i><b>6.3</b> 图形语法（Grammar of Graphics）</a></li>
 <li class="chapter" data-level="6.4" data-path="visu.html"><a href="visu.html#ggplot2"><i class="fa fa-check"></i><b>6.4</b> <code>ggplot2</code></a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="visu.html"><a href="visu.html#ggplot2几何对象"><i class="fa fa-check"></i><b>6.4.1</b> <code>ggplot2</code>几何对象</a></li>
-<li class="chapter" data-level="6.4.2" data-path="visu.html"><a href="visu.html#ggplot2的美术属性"><i class="fa fa-check"></i><b>6.4.2</b> <code>ggplot2</code>的美术属性</a></li>
-<li class="chapter" data-level="6.4.3" data-path="visu.html"><a href="visu.html#ggplot2辅助"><i class="fa fa-check"></i><b>6.4.3</b> <code>ggplot2</code>辅助</a></li>
+<li class="chapter" data-level="6.4.1" data-path="visu.html"><a href="visu.html#几何对象"><i class="fa fa-check"></i><b>6.4.1</b> 几何对象</a></li>
+<li class="chapter" data-level="6.4.2" data-path="visu.html"><a href="visu.html#美术属性"><i class="fa fa-check"></i><b>6.4.2</b> 美术属性</a></li>
+<li class="chapter" data-level="6.4.3" data-path="visu.html"><a href="visu.html#统计变换"><i class="fa fa-check"></i><b>6.4.3</b> 统计变换</a></li>
+<li class="chapter" data-level="6.4.4" data-path="visu.html"><a href="visu.html#标尺"><i class="fa fa-check"></i><b>6.4.4</b> 标尺</a></li>
+<li class="chapter" data-level="6.4.5" data-path="visu.html"><a href="visu.html#坐标系"><i class="fa fa-check"></i><b>6.4.5</b> 坐标系</a></li>
+<li class="chapter" data-level="6.4.6" data-path="visu.html"><a href="visu.html#分面"><i class="fa fa-check"></i><b>6.4.6</b> 分面</a></li>
+<li class="chapter" data-level="6.4.7" data-path="visu.html"><a href="visu.html#标签与图例"><i class="fa fa-check"></i><b>6.4.7</b> 标签与图例</a></li>
+<li class="chapter" data-level="6.4.8" data-path="visu.html"><a href="visu.html#主题"><i class="fa fa-check"></i><b>6.4.8</b> 主题</a></li>
+<li class="chapter" data-level="6.4.9" data-path="visu.html"><a href="visu.html#图例"><i class="fa fa-check"></i><b>6.4.9</b> 图例</a></li>
+<li class="chapter" data-level="6.4.10" data-path="visu.html"><a href="visu.html#图形组合"><i class="fa fa-check"></i><b>6.4.10</b> 图形组合</a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="visu.html"><a href="visu.html#案例did结果的可视化"><i class="fa fa-check"></i><b>6.5</b> 案例：DID结果的可视化</a></li>
-<li class="chapter" data-level="6.6" data-path="visu.html"><a href="visu.html#动图"><i class="fa fa-check"></i><b>6.6</b> 动图</a></li>
-<li class="chapter" data-level="6.7" data-path="visu.html"><a href="visu.html#大屏"><i class="fa fa-check"></i><b>6.7</b> 大屏</a>
+<li class="chapter" data-level="6.5" data-path="visu.html"><a href="visu.html#调色板"><i class="fa fa-check"></i><b>6.5</b> 调色板</a>
 <ul>
-<li class="chapter" data-level="6.7.1" data-path="visu.html"><a href="visu.html#交互式"><i class="fa fa-check"></i><b>6.7.1</b> 交互式</a></li>
+<li class="chapter" data-level="6.5.1" data-path="visu.html"><a href="visu.html#ggsci"><i class="fa fa-check"></i><b>6.5.1</b> ggsci</a></li>
+<li class="chapter" data-level="6.5.2" data-path="visu.html"><a href="visu.html#colorspace"><i class="fa fa-check"></i><b>6.5.2</b> colorspace</a></li>
 </ul></li>
+<li class="chapter" data-level="6.6" data-path="visu.html"><a href="visu.html#动图"><i class="fa fa-check"></i><b>6.6</b> 动图</a></li>
+<li class="chapter" data-level="6.7" data-path="visu.html"><a href="visu.html#交互图"><i class="fa fa-check"></i><b>6.7</b> 交互图</a></li>
+<li class="chapter" data-level="6.8" data-path="visu.html"><a href="visu.html#数据大屏dashboard"><i class="fa fa-check"></i><b>6.8</b> 数据大屏Dashboard</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="visu.html"><a href="visu.html#flexdashboard安装"><i class="fa fa-check"></i><b>6.8.1</b> flexdashboard安装</a></li>
+<li class="chapter" data-level="6.8.2" data-path="visu.html"><a href="visu.html#新建dashboard"><i class="fa fa-check"></i><b>6.8.2</b> 新建dashboard</a></li>
+<li class="chapter" data-level="6.8.3" data-path="visu.html"><a href="visu.html#dashboard布局"><i class="fa fa-check"></i><b>6.8.3</b> dashboard布局</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="visu.html"><a href="visu.html#其他参考资料"><i class="fa fa-check"></i><b>6.9</b> 其他参考资料</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="reg.html"><a href="reg.html"><i class="fa fa-check"></i><b>7</b> 回归</a>
 <ul>
@@ -421,6 +443,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="8.2.1" data-path="py.html"><a href="py.html#安装"><i class="fa fa-check"></i><b>8.2.1</b> 安装</a></li>
 <li class="chapter" data-level="8.2.2" data-path="py.html"><a href="py.html#编辑器-1"><i class="fa fa-check"></i><b>8.2.2</b> 编辑器</a></li>
+<li class="chapter" data-level="8.2.3" data-path="py.html"><a href="py.html#pycharm的安装与教育许可证"><i class="fa fa-check"></i><b>8.2.3</b> Pycharm的安装与教育许可证</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="py.html"><a href="py.html#变量-1"><i class="fa fa-check"></i><b>8.3</b> 变量</a></li>
 <li class="chapter" data-level="8.4" data-path="py.html"><a href="py.html#数据类型-1"><i class="fa fa-check"></i><b>8.4</b> 数据类型</a>
@@ -695,9 +718,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="编辑器-1" class="section level3 hasAnchor" number="8.2.2">
 <h3><span class="header-section-number">8.2.2</span> 编辑器<a href="py.html#编辑器-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>Python</code>有一个增强式编译环境，<code>Ipython</code>可用于交互式编程。还提供了<code>Jupyter</code>，是<code>IPython</code>发展而来的可以在网页上进行交互式编程的环境。它的交互性更强，可以规避掉命令行，上手容易，适合写教程。但是，网页并不能替代编辑器，不适合写大段程序，也没有批量处理能力。如果是只是学会了<code>Jupyter</code>就以为自己学会了编程，到处招摇过市，会暴露自己的无知与傲慢。因此，不推荐大家将其作为编辑器使用。</p>
+<p><code>Python</code>有一个增强式编译环境，<code>Ipython</code>可用于交互式编程。还提供了<code>Jupyter Notebook</code>，是<code>IPython</code>发展而来的可以在网页上进行交互式编程的环境。它的交互性更强，可以规避掉命令行，上手容易，适合写教程。</p>
+<p>但是，网页并不能替代编辑器，不适合写大段程序，也没有批量处理能力。如果是只是学会了<code>Jupyter</code>就以为自己学会了编程，到处招摇过市，会暴露自己的无知与傲慢。因此，不推荐大家将其作为编辑器使用。</p>
+</div>
+<div id="pycharm的安装与教育许可证" class="section level3 hasAnchor" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> Pycharm的安装与教育许可证<a href="py.html#pycharm的安装与教育许可证" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>我们推荐<code>Pycharm Professional</code>作为<code>Python</code>的编辑器（<a href="https://www.jetbrains.com/pycharm/download/?section=mac">下载地址</a>），这是一款不逊色于<code>Rstudio</code>的编辑器，且为教育机构用户提供免费的权限。<code>Pycharm</code>不仅继承了语法高亮、自动补全以及版本控制等基本功能，更是集合了远程服务器编译功能，让远程调试非常便捷，这是一个<code>Rstudio</code>都没有的功能。同时，<code>Pycharm</code>也支持跨语言编辑。</p>
-<p><strong>这里缺一个pycharm教程（后面补上）</strong>。</p>
+<p>安装之后请在<a href="https://www.jetbrains.com/shop/eform/students" class="uri">https://www.jetbrains.com/shop/eform/students</a>申请教育许可证。建议使用“官方文件”认证的方式。</p>
+<p><img src="images/pybasic/pycharm.png" width="90%" /></p>
+<p>打开<code>Pycharm</code>的第一步是新建项目，新建项目是要确定项目路径与编译代码的<code>Python</code>路径。Windows系统读者注意要使用WSL环境中的<code>python</code>，具体配置方法见视频。</p>
+<p><img src="images/pybasic/pycharm2.png" width="90%" /></p>
+<p>这里对应的习惯是一个研究项目对应一个路径，其实这样的习惯在<code>R</code>中也应该学习。</p>
+<p><code>Pycharm</code>的窗口环境如下：</p>
+<p><img src="images/pybasic/pycharm3.png" width="90%" /></p>
 <p>此外<code>Rstudio</code>也是可以兼容python的，使用<code>reticulate::repl_python()</code>即可将<code>Console</code>的编译环境变成<code>python</code>环境。在做一些小命令尝试的时候，可以直接在Rtudio中编程，而不需要特别转换工作环境。毕竟，任何环境的转换都是需要成本的。</p>
 </div>
 </div>
@@ -710,7 +743,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="数据类型-1" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> 数据类型<a href="py.html#数据类型-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><code>Python</code>有物种数据类型：整型（精度无限的整数）、浮点型（64位高精度小数）、字符串和<code>None</code>。字符串引号（单引号或双引号）标注、布尔型（<code>Ture</code>和<code>False</code>）。</p>
+<p><code>Python</code>有五种数据类型：整型（精度无限的整数）、浮点型（64位高精度小数）、字符串和<code>None</code>。字符串引号（单引号或双引号）标注、布尔型（<code>Ture</code>和<code>False</code>）。</p>
 <p><code>None</code>是<code>Python</code>中一个特别的值，即不是整数也不是浮点数，属于一种独有的类型。可以代表很多含义：“空”或者“没有”，或者“无法表达”，或者“出错了”、“非法”。转换为布尔类型时，None 的赋值为“假”。</p>
 <p><code>type</code>函数可以查看的数据类型。</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="py.html#cb5-1" tabindex="-1"></a><span class="bu">type</span>(<span class="dv">1</span>)</span></code></pre></div>
