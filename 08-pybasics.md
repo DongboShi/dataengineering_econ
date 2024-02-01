@@ -848,267 +848,282 @@ help(math)
 ## FUNCTIONS
 ##     acos(x, /)
 ##         Return the arc cosine (measured in radians) of x.
-##         
+## 
 ##         The result is between 0 and pi.
-##     
+## 
 ##     acosh(x, /)
 ##         Return the inverse hyperbolic cosine of x.
-##     
+## 
 ##     asin(x, /)
 ##         Return the arc sine (measured in radians) of x.
-##         
+## 
 ##         The result is between -pi/2 and pi/2.
-##     
+## 
 ##     asinh(x, /)
 ##         Return the inverse hyperbolic sine of x.
-##     
+## 
 ##     atan(x, /)
 ##         Return the arc tangent (measured in radians) of x.
-##         
+## 
 ##         The result is between -pi/2 and pi/2.
-##     
+## 
 ##     atan2(y, x, /)
 ##         Return the arc tangent (measured in radians) of y/x.
-##         
+## 
 ##         Unlike atan(y/x), the signs of both x and y are considered.
-##     
+## 
 ##     atanh(x, /)
 ##         Return the inverse hyperbolic tangent of x.
-##     
+## 
 ##     cbrt(x, /)
 ##         Return the cube root of x.
-##     
+## 
 ##     ceil(x, /)
 ##         Return the ceiling of x as an Integral.
-##         
+## 
 ##         This is the smallest integer >= x.
-##     
+## 
 ##     comb(n, k, /)
 ##         Number of ways to choose k items from n items without repetition and without order.
-##         
+## 
 ##         Evaluates to n! / (k! * (n - k)!) when k <= n and evaluates
 ##         to zero when k > n.
-##         
+## 
 ##         Also called the binomial coefficient because it is equivalent
 ##         to the coefficient of k-th term in polynomial expansion of the
 ##         expression (1 + x)**n.
-##         
+## 
 ##         Raises TypeError if either of the arguments are not integers.
 ##         Raises ValueError if either of the arguments are negative.
-##     
+## 
 ##     copysign(x, y, /)
 ##         Return a float with the magnitude (absolute value) of x but the sign of y.
-##         
+## 
 ##         On platforms that support signed zeros, copysign(1.0, -0.0)
 ##         returns -1.0.
-##     
+## 
 ##     cos(x, /)
 ##         Return the cosine of x (measured in radians).
-##     
+## 
 ##     cosh(x, /)
 ##         Return the hyperbolic cosine of x.
-##     
+## 
 ##     degrees(x, /)
 ##         Convert angle x from radians to degrees.
-##     
+## 
 ##     dist(p, q, /)
 ##         Return the Euclidean distance between two points p and q.
-##         
+## 
 ##         The points should be specified as sequences (or iterables) of
 ##         coordinates.  Both inputs must have the same dimension.
-##         
+## 
 ##         Roughly equivalent to:
 ##             sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))
-##     
+## 
 ##     erf(x, /)
 ##         Error function at x.
-##     
+## 
 ##     erfc(x, /)
 ##         Complementary error function at x.
-##     
+## 
 ##     exp(x, /)
 ##         Return e raised to the power of x.
-##     
+## 
 ##     exp2(x, /)
 ##         Return 2 raised to the power of x.
-##     
+## 
 ##     expm1(x, /)
 ##         Return exp(x)-1.
-##         
+## 
 ##         This function avoids the loss of precision involved in the direct evaluation of exp(x)-1 for small x.
-##     
+## 
 ##     fabs(x, /)
 ##         Return the absolute value of the float x.
-##     
+## 
 ##     factorial(n, /)
 ##         Find n!.
-##         
+## 
 ##         Raise a ValueError if x is negative or non-integral.
-##     
+## 
 ##     floor(x, /)
 ##         Return the floor of x as an Integral.
-##         
+## 
 ##         This is the largest integer <= x.
-##     
+## 
 ##     fmod(x, y, /)
 ##         Return fmod(x, y), according to platform C.
-##         
+## 
 ##         x % y may differ.
-##     
+## 
 ##     frexp(x, /)
 ##         Return the mantissa and exponent of x, as pair (m, e).
-##         
+## 
 ##         m is a float and e is an int, such that x = m * 2.**e.
 ##         If x is 0, m and e are both 0.  Else 0.5 <= abs(m) < 1.0.
-##     
+## 
 ##     fsum(seq, /)
 ##         Return an accurate floating point sum of values in the iterable seq.
-##         
+## 
 ##         Assumes IEEE-754 floating point arithmetic.
-##     
+## 
 ##     gamma(x, /)
 ##         Gamma function at x.
-##     
+## 
 ##     gcd(*integers)
 ##         Greatest Common Divisor.
-##     
+## 
 ##     hypot(...)
 ##         hypot(*coordinates) -> value
-##         
+## 
 ##         Multidimensional Euclidean distance from the origin to a point.
-##         
+## 
 ##         Roughly equivalent to:
 ##             sqrt(sum(x**2 for x in coordinates))
-##         
+## 
 ##         For a two dimensional point (x, y), gives the hypotenuse
 ##         using the Pythagorean theorem:  sqrt(x*x + y*y).
-##         
+## 
 ##         For example, the hypotenuse of a 3/4/5 right triangle is:
-##         
+## 
 ##             >>> hypot(3.0, 4.0)
 ##             5.0
-##     
+## 
 ##     isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)
 ##         Determine whether two floating point numbers are close in value.
-##         
+## 
 ##           rel_tol
 ##             maximum difference for being considered "close", relative to the
 ##             magnitude of the input values
 ##           abs_tol
 ##             maximum difference for being considered "close", regardless of the
 ##             magnitude of the input values
-##         
+## 
 ##         Return True if a is close in value to b, and False otherwise.
-##         
+## 
 ##         For the values to be considered close, the difference between them
 ##         must be smaller than at least one of the tolerances.
-##         
+## 
 ##         -inf, inf and NaN behave similarly to the IEEE 754 Standard.  That
 ##         is, NaN is not close to anything, even itself.  inf and -inf are
 ##         only close to themselves.
-##     
+## 
 ##     isfinite(x, /)
 ##         Return True if x is neither an infinity nor a NaN, and False otherwise.
-##     
+## 
 ##     isinf(x, /)
 ##         Return True if x is a positive or negative infinity, and False otherwise.
-##     
+## 
 ##     isnan(x, /)
 ##         Return True if x is a NaN (not a number), and False otherwise.
-##     
+## 
 ##     isqrt(n, /)
 ##         Return the integer part of the square root of the input.
-##     
+## 
 ##     lcm(*integers)
 ##         Least Common Multiple.
-##     
+## 
 ##     ldexp(x, i, /)
 ##         Return x * (2**i).
-##         
+## 
 ##         This is essentially the inverse of frexp().
-##     
+## 
 ##     lgamma(x, /)
 ##         Natural logarithm of absolute value of Gamma function at x.
-##     
+## 
 ##     log(...)
 ##         log(x, [base=math.e])
 ##         Return the logarithm of x to the given base.
-##         
-##         If the base not specified, returns the natural logarithm (base e) of x.
-##     
+## 
+##         If the base is not specified, returns the natural logarithm (base e) of x.
+## 
 ##     log10(x, /)
 ##         Return the base 10 logarithm of x.
-##     
+## 
 ##     log1p(x, /)
 ##         Return the natural logarithm of 1+x (base e).
-##         
+## 
 ##         The result is computed in a way which is accurate for x near zero.
-##     
+## 
 ##     log2(x, /)
 ##         Return the base 2 logarithm of x.
-##     
+## 
 ##     modf(x, /)
 ##         Return the fractional and integer parts of x.
-##         
+## 
 ##         Both results carry the sign of x and are floats.
-##     
-##     nextafter(x, y, /)
-##         Return the next floating-point value after x towards y.
-##     
+## 
+##     nextafter(x, y, /, *, steps=None)
+##         Return the floating-point value the given number of steps after x towards y.
+## 
+##         If steps is not specified or is None, it defaults to 1.
+## 
+##         Raises a TypeError, if x or y is not a double, or if steps is not an integer.
+##         Raises ValueError if steps is negative.
+## 
 ##     perm(n, k=None, /)
 ##         Number of ways to choose k items from n items without repetition and with order.
-##         
+## 
 ##         Evaluates to n! / (n - k)! when k <= n and evaluates
 ##         to zero when k > n.
-##         
+## 
 ##         If k is not specified or is None, then k defaults to n
 ##         and the function returns n!.
-##         
+## 
 ##         Raises TypeError if either of the arguments are not integers.
 ##         Raises ValueError if either of the arguments are negative.
-##     
+## 
 ##     pow(x, y, /)
 ##         Return x**y (x to the power of y).
-##     
+## 
 ##     prod(iterable, /, *, start=1)
 ##         Calculate the product of all the elements in the input iterable.
-##         
+## 
 ##         The default start value for the product is 1.
-##         
+## 
 ##         When the iterable is empty, return the start value.  This function is
 ##         intended specifically for use with numeric values and may reject
 ##         non-numeric types.
-##     
+## 
 ##     radians(x, /)
 ##         Convert angle x from degrees to radians.
-##     
+## 
 ##     remainder(x, y, /)
 ##         Difference between x and the closest integer multiple of y.
-##         
+## 
 ##         Return x - n*y where n*y is the closest integer multiple of y.
 ##         In the case where x is exactly halfway between two multiples of
 ##         y, the nearest even value of n is used. The result is always exact.
-##     
+## 
 ##     sin(x, /)
 ##         Return the sine of x (measured in radians).
-##     
+## 
 ##     sinh(x, /)
 ##         Return the hyperbolic sine of x.
-##     
+## 
 ##     sqrt(x, /)
 ##         Return the square root of x.
-##     
+## 
+##     sumprod(p, q, /)
+##         Return the sum of products of values from two iterables p and q.
+## 
+##         Roughly equivalent to:
+## 
+##             sum(itertools.starmap(operator.mul, zip(p, q, strict=True)))
+## 
+##         For float and mixed int/float inputs, the intermediate products
+##         and sums are computed with extended precision.
+## 
 ##     tan(x, /)
 ##         Return the tangent of x (measured in radians).
-##     
+## 
 ##     tanh(x, /)
 ##         Return the hyperbolic tangent of x.
-##     
+## 
 ##     trunc(x, /)
 ##         Truncates the Real x to the nearest Integral toward 0.
-##         
+## 
 ##         Uses the __trunc__ magic method.
-##     
+## 
 ##     ulp(x, /)
 ##         Return the value of the least significant bit of the float x.
 ## 
@@ -1120,7 +1135,7 @@ help(math)
 ##     tau = 6.283185307179586
 ## 
 ## FILE
-##     /usr/local/Cellar/python@3.11/3.11.5/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload/math.cpython-311-darwin.so
+##     /usr/local/Cellar/python@3.12/3.12.1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/lib-dynload/math.cpython-312-darwin.so
 ```
 
 当模块中的内容很多时，会被安排在不同层次的名字空间中，可以使用`from`来简化调用，`as`可以指定模块的别名。
@@ -1237,6 +1252,31 @@ with open("log.txt","a") as f:
 |`chdir`|改变当前目录|
 |`getcwd`|查看当前目录|
 |`rmdir`|删除目录|
+
+## Python的环境配置
+
+笼统地说，Python环境指的是“解释器（即python本身）与其使用模块的整体”。如下图所示，有两种方案来管理python的环境，一种是只针对python内部的pip管理器方案，另一种是跨语言的环境整合方案。注意，此时的环境管理指的是拥有管理员权限的管理。
+
+<img src="images/pybasic/evn.png" width="100%" />
+
+pip是python自带的语言管理工具，只适合早期试验个别最新的python软件，长期维护性差，而且只适用于python。pip会和系统的库发生冲突，出现玄学问题。
+
+更严重的是，pip没有经过第三方检测，意味着无条件相信上游软件作者，没有办法保障安全，不确定是否会被恶意植入病毒代码，在不知不觉中隐私信息被窃取，或者电脑被他人操纵。这样的重大安全事故，历史上已经发生过多次。
+
+环境整合方案则是需要经过跨语言整合测试的方案，对应多种软件的稳定版本。会有负责安全、兼容和性能的团队，以及大量使用相同环境的用户反馈问题。环境整合方案意味着我们要信任环境整合的第三方。
+
+环境整合方案有两种模式：Debian/Arch/Gentoo志愿者模式与Ubuntu/Conda公司免费模式。前者的开发团队由没有利益关系的、兴趣一致的人们通过git共同开发，没有人能够强制整个项目的走向，集体决策，是一种民主模式。后者则是利用免费服务吸引用户，构建潜在的客户池或者暗藏广告来改造用户，产品总是服务于公司的盈利或扩大影响的战略，代码是有雇员生产的，雇员的总体规模肯定远小于志愿者模式。
+
+我们不推荐使用公司模式，Ubuntu的代码95%直接来自Debian，且公司曾经定制广告；Conda的依赖关系的计算效率极低，但在公司层面花费大量的外宣经费进行推广，所以互联网上可以看到大量的技术博主推广conda，看上去仿佛conda是被所有人喜欢的，这是NGO的一种宣传策略。所以，非常不推荐使用conda。
+
+上面的场景对应的是自己拥有root权限，可以维护自己的主机或者一个服务器的整体环境。还有一种情形是自己只有普通用户权限，此时推荐使用Gentoo Prefix进行用户态管理。Gentoo Prefix由续本达召集管理，有问题可以直接物理上找到召集人，还是更放心的。
+
+值得一提的是，对于macOS用户,Homebrew提供了志愿者模式的环境整合方案，本书目前推荐Homebrew模式，但是brew中的依赖经常滞后，存在一定的局限性；Gentoo Prefix也为macOS开发了一套环境整合方案，更适用于科学计算，但是Gentoo Prefix的安装与使用，会遇到一些玄学问题，作者自己也没有完全搞定，如果全部搞定之后，会将教材替换成Gentoo Prefix模式。
+
+总结起来就是，自己的机器用Debian，工具安装用apt；他人的机器用Gentoo Prefix，工具安装用emerge。
+
+
+
 
 
 ## 案例：获取高德地图地址信息
