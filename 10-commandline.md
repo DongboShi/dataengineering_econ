@@ -188,6 +188,7 @@ ctrl+d 结束文件
 ### 别名
 
 
+
 ### 脚本
 
 把命令储存在拓展名为`.sh`的文件中，就形成了脚本文件。`bash`命令可以运行`Shell`脚本。
@@ -201,6 +202,7 @@ bash add_up_100.sh
 ```
 ## 5050
 ```
+
 在第一行填加脚本解释器 `#!/bin/bash`，可以告知脚本执行时候要使用`/bin/bash`
 解释执行。此处，`#!`是约定好的关键字，当它在脚本文件的第一行时，内核会寻找它后面的解释器来执行脚本。
 
@@ -578,8 +580,8 @@ ls -li | grep 'link_f' # -i参数显示文件的inode节点信息
 ```
 
 ```
-## 525329738 -rw-r--r--@   2 birdstone  staff        0 Feb  1 11:11 link_f1
-## 525329738 -rw-r--r--@   2 birdstone  staff        0 Feb  1 11:11 link_f2
+## 525571716 -rw-r--r--@   2 birdstone  staff        0 Feb  3 11:21 link_f1
+## 525571716 -rw-r--r--@   2 birdstone  staff        0 Feb  3 11:21 link_f2
 ## 521855736 lrwxr-xr-x    1 birdstone  staff        7 Jan  2 17:30 link_f3 -> link_f1
 ```
 
@@ -624,7 +626,7 @@ cat link_f3
 
 ```
 ## ln: link_f3: File exists
-## 525329741 -rw-r--r--@   1 birdstone  staff        0 Feb  1 11:11 link_f1
+## 525571719 -rw-r--r--@   1 birdstone  staff        0 Feb  3 11:21 link_f1
 ## 521855736 lrwxr-xr-x    1 birdstone  staff        7 Jan  2 17:30 link_f3 -> link_f1
 ## I am file 1
 ## cat: link_f3: No such file or directory
@@ -821,7 +823,6 @@ seq 10| gsed 's/2/3/'
 
 多个命令可以通过`{}`压缩在一行使用，例如`{ X; Y; Z }`；也按行分割存入一个脚本文件，通过`-f`选项在`sed`命令中调用。
 
-#### sed命令清单
 
 ### s命令（substitute）
 
@@ -1690,7 +1691,7 @@ gawk 'BEGIN { srand(); print rand() }'
 ```
 ## 0.924046
 ## 0.924046
-## 0.331276
+## 0.0407697
 ```
 
 `int`函数可以取整数：
@@ -1701,7 +1702,7 @@ gawk 'BEGIN { srand(); print int(100*rand()) }'
 ```
 
 ```
-## 33
+## 4
 ```
 
 #### 字符串函数
@@ -1827,22 +1828,113 @@ gawk 'BEGIN{t["z"]=33;t["b"]=2;t["c"]=83;l=asorti(t,newt); for(i=1;i<=l;i++){ pr
 
 思考题：数据驱动的编程有哪些弱点？
 
-
-
-**不同版本的shell可以写一段**
-
-这里记录一下
-
-## R的命令行选项
-为了能够使用Make来构建完整的数据自动分析流程，我们就需要R代码能够从命令行解析参数并在R代码中使用。argparse包是受到Python中同名包的启发开发的，其用法与Python中接近，可以让我们在跨语言编程的时候更加轻松。
+## Linux/Unix Shebang与argparse
 
 ### Linux/Unix Shebang
 
-在命令行中运行R脚本，可以使用`Rscript example.R`的方式，其中`example.R`是我们希望运行的脚本。在Linux和Unix系统中，有一种更简洁的方式，即通过在脚本第一行添加`#! /usr/bin/env Rscript`的方式，来告诉操作系统这段脚本的要调用Rscript来运行。此时只要进入到`example.R`所在的路径中，使用命令`./exmaple.R`便可以直接运行这段代码。类似地，如果是一段Python3脚本的话，我们可以使用``#! /usr/bin/env Python3`
+R和Python的脚本均可以从命令行运行。第一种方式是使用对应的程序，例如，可以使用`Rscript example.R`的方式来运行R语言脚本；同样可以使用`python3 example.py` 来运行python脚本。
 
-另外，`!#`被称作Shebang，翻译过来就是"井号叹号"，上一次我听到这么草率的命名还是我办公室所在的"新建楼"。
+在Linux和Unix系统中，有一种更简洁的方式，即通过在脚本第一行添加`#! /usr/bin/env Rscript`或``#! /usr/bin/env python3`的方式，来告诉操作系统这段脚本的要调用Rscript/python3来运行。
 
-### argparse包实例
+之后将对应脚本修改为可执行文件（chmod +x）后，使用命令`./exmaple.R`（或`./exmaple.py`)便可以直接运行这段代码。
+
+`!#`被称作Shebang，翻译过来就是"井号叹号"，上一次我听到这么草率的命名还是我办公室所在的"新建楼"。
+
+### argparse模块（包）
+
+#### Python
+
+`argparse`是Python标准库中的一个模块，它提供了创建命令行界面的功能。相比于`sys.argv`，`argparse`在简单易用的同时，还提供了诸如“自动验证输入参数的类型”、“自动生成帮助和使用信息”和“指定参数的默认值”丰富的功能。
+
+[官方文档](https://docs.python.org/zh-cn/3/library/argparse.html)中详细介绍了`argparse`用法，此处我们通过案例简要介绍其主要功能，帮助大家快速上手。
+
+第一步，导入模块并创建参数解析器对象，这个对象将负责处理命令行参数和生成帮助信息，通过参数`description`可以设置脚本的帮助信息。
+
+
+```python3
+#! /usr/bin/env python3
+import argparse
+import random
+parser = argparse.ArgumentParser(description="This is a random number generator.")
+```
+
+第二步，添加位置参数。下面的例子中，使用`type`规定参数输入类型为整数（默认为字符串）。注意位置参数是必选参数，如果不输入会报错。
+
+
+```python3
+parser.add_argument("n", type = int, help = "the number of randon numbers to generate")
+```
+
+第三步，添加可选参数。`add_argument`通过`-`来识别可选参数，`--`用于指定参数名称，`-`用于指定参数名称缩写。
+
+在下面的例子中，我们定义了四个可选参数：
+
+- 第一个可选参数quietly，缩写为q，其作用是修改verbose参数，当调用改参数时，verbose被修改为FALSE，从而导致不再打印计算过程。此处，我们调用了两个新的关键词，`action`和`dest`。`action`赋值为“store_false”，这表示当脚本指定了该选项时，则将值“False”赋给`args.verbose`（通过dest关键词指定），如未指定则表示其值为True。
+
+- 第二个参数generator，无缩写，用于确定调用何种随机分布。`default`设置参数的缺省值为rnorm，对应于正态分布
+
+- 设置第三个参数为mean_sd，无缩写，浮点数类型，用于确定正态分布的均值和标准差，`nargs`指定了参数的长度为2，参数值会储存成为一个列表，缺省值为[0,1].
+
+此外，通过制定`required = True`可以将可选参数设置为必需参数。
+
+
+```python3
+parser.add_argument("-q", "--quietly", action="store_false", 
+                    dest="verbose", help="Print little output")
+parser.add_argument("--generator", default="rnorm", 
+                    help = "Function to generate random deviates [default \"%(default)s\"]")
+parser.add_argument("--mean_sd", default=[0,1], type=float,
+                    nargs = 2, 
+                    metavar="mean and standard deviation",
+                    help="Mean and standard deviation if generator == \"rnorm\" [default %(default)s]; otherwise, range of the uniform distribution")
+```
+
+第四步,调用解析器并针对相关参数进行运算。args被赋值为命令行参数输入的相应值。
+
+
+```python3
+args = parser.parse_args()
+# 根据verbose确定是否打印计算过程
+if args.verbose:
+  print("writing some verbose output to standard error...\n")
+
+# 根据其他参数，确定输出随机数的类型与次数
+for i in range(args.n):
+  if args.generator == "rnorm":
+    print(random.gauss(args.mean_sd[0],args.mean_sd[1]))
+  else:
+    print(random.unif(args.mean_sd[0],args.mean_sd[1]))
+```
+
+在命令行为脚本添加可执行权限：
+
+```{}
+sudo chmod +x random_gn.py
+```
+
+然后便可以执行该脚本，例如我们可以查该脚本对应的帮助，
+
+```{}
+./random_gn.py --help
+```
+
+输出结果为：
+<img src="./images/cml/pyargs1.png" width="100%" />
+
+使用参数输出3个正态分布随机数,且选择不打印计算过程。
+
+```{}
+./random_gn.py --mean_sd 10 10 3 --quiet
+```
+输出结果如下：
+<img src="./images/cml/pyargs2.png" width="100%" />
+
+
+
+#### R语言
+
+R代码能够从命令行解析参数并在R代码中使用。argparse包是受到Python中同名包的启发开发的，其用法与Python中接近，可以让我们在跨语言编程的时候更加轻松。
+
 argparse包使用起来非常简洁，也没有太多函数。我们其官方教程中的一个实例来介绍如何使用它。
 
 在命令行中的参数可以完整参数(用`--`调用)，与短参数(用`-`调用)，同时每一个参数都有其缺省值，以及对应的帮助文档解释。命令行参数本身有各种灵活的设置方式，感兴趣的读者可以进一步阅读Data Science at the Command Line.^[https://www.datascienceatthecommandline.com/1e/]。详细介绍这部分内容并不是本书的使命。
@@ -1856,13 +1948,14 @@ argparse包分为三个步骤，第一步是使用`ArgumentParser()`创建一个
 #! /usr/bin/env Rscript
 library(argparse)
 
-# 创建参数解析对象
+# 创建参数解析器对象
 parser <- ArgumentParser()
 
 # 设置参数
 # 设置第一个参数verbose，缩写为v，其作用是告诉脚本是否打印完整的计算过程，其缺省值为TRUE
-parser$add_argument("-v", "--verbose", action="store_true", default=TRUE,
-        help="Print extra output [default]")
+parser$add_argument("-v", "--verbose", action="store_true",
+                    default=TRUE,
+                    help="Print extra output [default]")
 
 # 设置第二个参数quietly，缩写为q，其作用是修改verbose参数，当调用改参数时，verbose被修改为FALSE，从而导致不再打印计算过程
 parser$add_argument("-q", "--quietly", action="store_false", 
@@ -1870,7 +1963,7 @@ parser$add_argument("-q", "--quietly", action="store_false",
 
 # 设置第三个参数count，缩写为c，这是一个整数参数，缺省值5，在后续的代码中被用作确定输出随机数的个数
 parser$add_argument("-c", "--count", type="integer", default=5, 
-        help="Number of random normals to generate [default %(default)s]",
+        help="Number of random numbers to generate [default %(default)s]",
         metavar="number")
 
 # 设置第四个参数generator，无缩写，用于确定调用何种随机分布，缺省值rnorm对应于正态分布
@@ -1943,3 +2036,4 @@ sudo chmod +x example.R
 
 参考资料：
 Data Science at the Command Line
+

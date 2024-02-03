@@ -23,7 +23,7 @@
 <meta name="author" content="史冬波 续本达" />
 
 
-<meta name="date" content="2023-11-26" />
+<meta name="date" content="2024-02-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,6 +56,12 @@
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.10/grViz.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -324,37 +330,57 @@ div.csl-indent {
 <li class="chapter" data-level="5.2.2" data-path="manipulate.html"><a href="manipulate.html#整齐数据的定义"><i class="fa fa-check"></i><b>5.2.2</b> 整齐数据的定义</a></li>
 <li class="chapter" data-level="5.2.3" data-path="manipulate.html"><a href="manipulate.html#数据的凌乱点"><i class="fa fa-check"></i><b>5.2.3</b> 数据的凌乱点</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="manipulate.html"><a href="manipulate.html#关系代数"><i class="fa fa-check"></i><b>5.3</b> 关系代数</a></li>
-<li class="chapter" data-level="5.4" data-path="manipulate.html"><a href="manipulate.html#sql语言"><i class="fa fa-check"></i><b>5.4</b> SQL语言</a>
+<li class="chapter" data-level="5.3" data-path="manipulate.html"><a href="manipulate.html#关系代数"><i class="fa fa-check"></i><b>5.3</b> 关系代数</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="manipulate.html"><a href="manipulate.html#mysql"><i class="fa fa-check"></i><b>5.4.1</b> MySQL</a></li>
-<li class="chapter" data-level="5.4.2" data-path="manipulate.html"><a href="manipulate.html#postgresql"><i class="fa fa-check"></i><b>5.4.2</b> Postgresql</a></li>
+<li class="chapter" data-level="5.3.1" data-path="manipulate.html"><a href="manipulate.html#sql语言"><i class="fa fa-check"></i><b>5.3.1</b> SQL语言</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="manipulate.html"><a href="manipulate.html#dplyr"><i class="fa fa-check"></i><b>5.5</b> dplyr</a>
+<li class="chapter" data-level="5.4" data-path="manipulate.html"><a href="manipulate.html#sqlite3"><i class="fa fa-check"></i><b>5.4</b> SQLite3</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="manipulate.html"><a href="manipulate.html#集合运算"><i class="fa fa-check"></i><b>5.5.1</b> 集合运算</a></li>
-<li class="chapter" data-level="5.5.2" data-path="manipulate.html"><a href="manipulate.html#线性运算"><i class="fa fa-check"></i><b>5.5.2</b> 线性运算</a></li>
-<li class="chapter" data-level="5.5.3" data-path="manipulate.html"><a href="manipulate.html#管道"><i class="fa fa-check"></i><b>5.5.3</b> 管道</a></li>
-<li class="chapter" data-level="5.5.4" data-path="manipulate.html"><a href="manipulate.html#数据连接"><i class="fa fa-check"></i><b>5.5.4</b> 数据连接</a></li>
-<li class="chapter" data-level="5.5.5" data-path="manipulate.html"><a href="manipulate.html#数据分组与汇总"><i class="fa fa-check"></i><b>5.5.5</b> 数据分组与汇总</a></li>
+<li class="chapter" data-level="5.4.1" data-path="manipulate.html"><a href="manipulate.html#安装"><i class="fa fa-check"></i><b>5.4.1</b> 安装</a></li>
+<li class="chapter" data-level="5.4.2" data-path="manipulate.html"><a href="manipulate.html#数据类型-1"><i class="fa fa-check"></i><b>5.4.2</b> 数据类型</a></li>
+<li class="chapter" data-level="5.4.3" data-path="manipulate.html"><a href="manipulate.html#新建数据库与表格"><i class="fa fa-check"></i><b>5.4.3</b> 新建数据库与表格</a></li>
+<li class="chapter" data-level="5.4.4" data-path="manipulate.html"><a href="manipulate.html#集合运算"><i class="fa fa-check"></i><b>5.4.4</b> 集合运算</a></li>
+<li class="chapter" data-level="5.4.5" data-path="manipulate.html"><a href="manipulate.html#线性运算"><i class="fa fa-check"></i><b>5.4.5</b> 线性运算</a></li>
+<li class="chapter" data-level="5.4.6" data-path="manipulate.html"><a href="manipulate.html#数据连接"><i class="fa fa-check"></i><b>5.4.6</b> 数据连接</a></li>
+<li class="chapter" data-level="5.4.7" data-path="manipulate.html"><a href="manipulate.html#数据分组与汇总"><i class="fa fa-check"></i><b>5.4.7</b> 数据分组与汇总</a></li>
+<li class="chapter" data-level="5.4.8" data-path="manipulate.html"><a href="manipulate.html#其他-1"><i class="fa fa-check"></i><b>5.4.8</b> 其他</a></li>
+<li class="chapter" data-level="5.4.9" data-path="manipulate.html"><a href="manipulate.html#数据读写-1"><i class="fa fa-check"></i><b>5.4.9</b> 数据读写</a></li>
+<li class="chapter" data-level="5.4.10" data-path="manipulate.html"><a href="manipulate.html#索引与键"><i class="fa fa-check"></i><b>5.4.10</b> 索引与键</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="manipulate.html"><a href="manipulate.html#宽数据与长数据的转换"><i class="fa fa-check"></i><b>5.6</b> 宽数据与长数据的转换</a>
+<li class="chapter" data-level="5.5" data-path="manipulate.html"><a href="manipulate.html#mysql"><i class="fa fa-check"></i><b>5.5</b> MySQL</a>
 <ul>
-<li class="chapter" data-level="5.6.1" data-path="manipulate.html"><a href="manipulate.html#宽数据转长数据"><i class="fa fa-check"></i><b>5.6.1</b> 宽数据转长数据</a></li>
-<li class="chapter" data-level="5.6.2" data-path="manipulate.html"><a href="manipulate.html#长数据转宽数据"><i class="fa fa-check"></i><b>5.6.2</b> 长数据转宽数据</a></li>
-<li class="chapter" data-level="5.6.3" data-path="manipulate.html"><a href="manipulate.html#联系人数据表的案例"><i class="fa fa-check"></i><b>5.6.3</b> 联系人数据表的案例</a></li>
+<li class="chapter" data-level="5.5.1" data-path="manipulate.html"><a href="manipulate.html#基本命令"><i class="fa fa-check"></i><b>5.5.1</b> 基本命令</a></li>
 </ul></li>
-<li class="chapter" data-level="5.7" data-path="manipulate.html"><a href="manipulate.html#其他定制操作"><i class="fa fa-check"></i><b>5.7</b> 其他定制操作</a>
+<li class="chapter" data-level="5.6" data-path="manipulate.html"><a href="manipulate.html#postgresql"><i class="fa fa-check"></i><b>5.6</b> Postgresql</a></li>
+<li class="chapter" data-level="5.7" data-path="manipulate.html"><a href="manipulate.html#dplyr"><i class="fa fa-check"></i><b>5.7</b> dplyr</a>
 <ul>
-<li class="chapter" data-level="5.7.1" data-path="manipulate.html"><a href="manipulate.html#排序"><i class="fa fa-check"></i><b>5.7.1</b> 排序</a></li>
-<li class="chapter" data-level="5.7.2" data-path="manipulate.html"><a href="manipulate.html#抽样"><i class="fa fa-check"></i><b>5.7.2</b> 抽样</a></li>
-<li class="chapter" data-level="5.7.3" data-path="manipulate.html"><a href="manipulate.html#去重复"><i class="fa fa-check"></i><b>5.7.3</b> 去重复</a></li>
-<li class="chapter" data-level="5.7.4" data-path="manipulate.html"><a href="manipulate.html#缺失值处理"><i class="fa fa-check"></i><b>5.7.4</b> 缺失值处理</a></li>
-<li class="chapter" data-level="5.7.5" data-path="manipulate.html"><a href="manipulate.html#拆分与合并数据列"><i class="fa fa-check"></i><b>5.7.5</b> 拆分与合并数据列</a></li>
-<li class="chapter" data-level="5.7.6" data-path="manipulate.html"><a href="manipulate.html#合并数据"><i class="fa fa-check"></i><b>5.7.6</b> 合并数据</a></li>
+<li class="chapter" data-level="5.7.1" data-path="manipulate.html"><a href="manipulate.html#集合运算-1"><i class="fa fa-check"></i><b>5.7.1</b> 集合运算</a></li>
+<li class="chapter" data-level="5.7.2" data-path="manipulate.html"><a href="manipulate.html#线性运算-1"><i class="fa fa-check"></i><b>5.7.2</b> 线性运算</a></li>
+<li class="chapter" data-level="5.7.3" data-path="manipulate.html"><a href="manipulate.html#管道"><i class="fa fa-check"></i><b>5.7.3</b> 管道</a></li>
+<li class="chapter" data-level="5.7.4" data-path="manipulate.html"><a href="manipulate.html#数据连接-1"><i class="fa fa-check"></i><b>5.7.4</b> 数据连接</a></li>
+<li class="chapter" data-level="5.7.5" data-path="manipulate.html"><a href="manipulate.html#数据分组与汇总-1"><i class="fa fa-check"></i><b>5.7.5</b> 数据分组与汇总</a></li>
 </ul></li>
-<li class="chapter" data-level="5.8" data-path="manipulate.html"><a href="manipulate.html#数据库的连接"><i class="fa fa-check"></i><b>5.8</b> 数据库的连接</a></li>
-<li class="chapter" data-level="5.9" data-path="manipulate.html"><a href="manipulate.html#data.table"><i class="fa fa-check"></i><b>5.9</b> data.table</a></li>
+<li class="chapter" data-level="5.8" data-path="manipulate.html"><a href="manipulate.html#宽数据与长数据的转换"><i class="fa fa-check"></i><b>5.8</b> 宽数据与长数据的转换</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="manipulate.html"><a href="manipulate.html#宽数据转长数据"><i class="fa fa-check"></i><b>5.8.1</b> 宽数据转长数据</a></li>
+<li class="chapter" data-level="5.8.2" data-path="manipulate.html"><a href="manipulate.html#长数据转宽数据"><i class="fa fa-check"></i><b>5.8.2</b> 长数据转宽数据</a></li>
+<li class="chapter" data-level="5.8.3" data-path="manipulate.html"><a href="manipulate.html#联系人数据表的案例"><i class="fa fa-check"></i><b>5.8.3</b> 联系人数据表的案例</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="manipulate.html"><a href="manipulate.html#其他定制操作"><i class="fa fa-check"></i><b>5.9</b> 其他定制操作</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="manipulate.html"><a href="manipulate.html#排序"><i class="fa fa-check"></i><b>5.9.1</b> 排序</a></li>
+<li class="chapter" data-level="5.9.2" data-path="manipulate.html"><a href="manipulate.html#抽样"><i class="fa fa-check"></i><b>5.9.2</b> 抽样</a></li>
+<li class="chapter" data-level="5.9.3" data-path="manipulate.html"><a href="manipulate.html#去重复"><i class="fa fa-check"></i><b>5.9.3</b> 去重复</a></li>
+<li class="chapter" data-level="5.9.4" data-path="manipulate.html"><a href="manipulate.html#缺失值处理"><i class="fa fa-check"></i><b>5.9.4</b> 缺失值处理</a></li>
+<li class="chapter" data-level="5.9.5" data-path="manipulate.html"><a href="manipulate.html#拆分与合并数据列"><i class="fa fa-check"></i><b>5.9.5</b> 拆分与合并数据列</a></li>
+<li class="chapter" data-level="5.9.6" data-path="manipulate.html"><a href="manipulate.html#合并数据"><i class="fa fa-check"></i><b>5.9.6</b> 合并数据</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="manipulate.html"><a href="manipulate.html#数据库的连接"><i class="fa fa-check"></i><b>5.10</b> 数据库的连接</a>
+<ul>
+<li class="chapter" data-level="5.10.1" data-path="manipulate.html"><a href="manipulate.html#r与数据库"><i class="fa fa-check"></i><b>5.10.1</b> R与数据库</a></li>
+<li class="chapter" data-level="5.10.2" data-path="manipulate.html"><a href="manipulate.html#python与数据库"><i class="fa fa-check"></i><b>5.10.2</b> Python与数据库</a></li>
+</ul></li>
+<li class="chapter" data-level="5.11" data-path="manipulate.html"><a href="manipulate.html#data.table"><i class="fa fa-check"></i><b>5.11</b> data.table</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="visu.html"><a href="visu.html"><i class="fa fa-check"></i><b>6</b> 数据可视化</a>
 <ul>
@@ -363,16 +389,31 @@ div.csl-indent {
 <li class="chapter" data-level="6.3" data-path="visu.html"><a href="visu.html#图形语法grammar-of-graphics"><i class="fa fa-check"></i><b>6.3</b> 图形语法（Grammar of Graphics）</a></li>
 <li class="chapter" data-level="6.4" data-path="visu.html"><a href="visu.html#ggplot2"><i class="fa fa-check"></i><b>6.4</b> <code>ggplot2</code></a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="visu.html"><a href="visu.html#ggplot2几何对象"><i class="fa fa-check"></i><b>6.4.1</b> <code>ggplot2</code>几何对象</a></li>
-<li class="chapter" data-level="6.4.2" data-path="visu.html"><a href="visu.html#ggplot2的美术属性"><i class="fa fa-check"></i><b>6.4.2</b> <code>ggplot2</code>的美术属性</a></li>
-<li class="chapter" data-level="6.4.3" data-path="visu.html"><a href="visu.html#ggplot2辅助"><i class="fa fa-check"></i><b>6.4.3</b> <code>ggplot2</code>辅助</a></li>
+<li class="chapter" data-level="6.4.1" data-path="visu.html"><a href="visu.html#几何对象"><i class="fa fa-check"></i><b>6.4.1</b> 几何对象</a></li>
+<li class="chapter" data-level="6.4.2" data-path="visu.html"><a href="visu.html#美术属性"><i class="fa fa-check"></i><b>6.4.2</b> 美术属性</a></li>
+<li class="chapter" data-level="6.4.3" data-path="visu.html"><a href="visu.html#统计变换"><i class="fa fa-check"></i><b>6.4.3</b> 统计变换</a></li>
+<li class="chapter" data-level="6.4.4" data-path="visu.html"><a href="visu.html#标尺"><i class="fa fa-check"></i><b>6.4.4</b> 标尺</a></li>
+<li class="chapter" data-level="6.4.5" data-path="visu.html"><a href="visu.html#坐标系"><i class="fa fa-check"></i><b>6.4.5</b> 坐标系</a></li>
+<li class="chapter" data-level="6.4.6" data-path="visu.html"><a href="visu.html#分面"><i class="fa fa-check"></i><b>6.4.6</b> 分面</a></li>
+<li class="chapter" data-level="6.4.7" data-path="visu.html"><a href="visu.html#标签与图例"><i class="fa fa-check"></i><b>6.4.7</b> 标签与图例</a></li>
+<li class="chapter" data-level="6.4.8" data-path="visu.html"><a href="visu.html#主题"><i class="fa fa-check"></i><b>6.4.8</b> 主题</a></li>
+<li class="chapter" data-level="6.4.9" data-path="visu.html"><a href="visu.html#图例"><i class="fa fa-check"></i><b>6.4.9</b> 图例</a></li>
+<li class="chapter" data-level="6.4.10" data-path="visu.html"><a href="visu.html#图形组合"><i class="fa fa-check"></i><b>6.4.10</b> 图形组合</a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="visu.html"><a href="visu.html#案例did结果的可视化"><i class="fa fa-check"></i><b>6.5</b> 案例：DID结果的可视化</a></li>
-<li class="chapter" data-level="6.6" data-path="visu.html"><a href="visu.html#动图"><i class="fa fa-check"></i><b>6.6</b> 动图</a></li>
-<li class="chapter" data-level="6.7" data-path="visu.html"><a href="visu.html#大屏"><i class="fa fa-check"></i><b>6.7</b> 大屏</a>
+<li class="chapter" data-level="6.5" data-path="visu.html"><a href="visu.html#调色板"><i class="fa fa-check"></i><b>6.5</b> 调色板</a>
 <ul>
-<li class="chapter" data-level="6.7.1" data-path="visu.html"><a href="visu.html#交互式"><i class="fa fa-check"></i><b>6.7.1</b> 交互式</a></li>
+<li class="chapter" data-level="6.5.1" data-path="visu.html"><a href="visu.html#ggsci"><i class="fa fa-check"></i><b>6.5.1</b> ggsci</a></li>
+<li class="chapter" data-level="6.5.2" data-path="visu.html"><a href="visu.html#colorspace"><i class="fa fa-check"></i><b>6.5.2</b> colorspace</a></li>
 </ul></li>
+<li class="chapter" data-level="6.6" data-path="visu.html"><a href="visu.html#动图"><i class="fa fa-check"></i><b>6.6</b> 动图</a></li>
+<li class="chapter" data-level="6.7" data-path="visu.html"><a href="visu.html#交互图"><i class="fa fa-check"></i><b>6.7</b> 交互图</a></li>
+<li class="chapter" data-level="6.8" data-path="visu.html"><a href="visu.html#数据大屏dashboard"><i class="fa fa-check"></i><b>6.8</b> 数据大屏Dashboard</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="visu.html"><a href="visu.html#flexdashboard安装"><i class="fa fa-check"></i><b>6.8.1</b> flexdashboard安装</a></li>
+<li class="chapter" data-level="6.8.2" data-path="visu.html"><a href="visu.html#新建dashboard"><i class="fa fa-check"></i><b>6.8.2</b> 新建dashboard</a></li>
+<li class="chapter" data-level="6.8.3" data-path="visu.html"><a href="visu.html#dashboard布局"><i class="fa fa-check"></i><b>6.8.3</b> dashboard布局</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="visu.html"><a href="visu.html#其他参考资料"><i class="fa fa-check"></i><b>6.9</b> 其他参考资料</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="reg.html"><a href="reg.html"><i class="fa fa-check"></i><b>7</b> 回归</a>
 <ul>
@@ -427,7 +468,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.12.6" data-path="reg.html"><a href="reg.html#选择统计量"><i class="fa fa-check"></i><b>7.12.6</b> 选择统计量</a></li>
 <li class="chapter" data-level="7.12.7" data-path="reg.html"><a href="reg.html#表格注释"><i class="fa fa-check"></i><b>7.12.7</b> 表格注释</a></li>
 <li class="chapter" data-level="7.12.8" data-path="reg.html"><a href="reg.html#整体布局"><i class="fa fa-check"></i><b>7.12.8</b> 整体布局</a></li>
-<li class="chapter" data-level="7.12.9" data-path="reg.html"><a href="reg.html#其他-1"><i class="fa fa-check"></i><b>7.12.9</b> 其他</a></li>
+<li class="chapter" data-level="7.12.9" data-path="reg.html"><a href="reg.html#其他-2"><i class="fa fa-check"></i><b>7.12.9</b> 其他</a></li>
 <li class="chapter" data-level="7.12.10" data-path="reg.html"><a href="reg.html#描述性统计表"><i class="fa fa-check"></i><b>7.12.10</b> 描述性统计表</a></li>
 </ul></li>
 <li class="chapter" data-level="7.13" data-path="reg.html"><a href="reg.html#回归结果的可视化"><i class="fa fa-check"></i><b>7.13</b> 回归结果的可视化</a>
@@ -442,11 +483,12 @@ div.csl-indent {
 <li class="chapter" data-level="8.1" data-path="py.html"><a href="py.html#python简介"><i class="fa fa-check"></i><b>8.1</b> Python简介</a></li>
 <li class="chapter" data-level="8.2" data-path="py.html"><a href="py.html#python安装与pycharm"><i class="fa fa-check"></i><b>8.2</b> Python安装与Pycharm</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="py.html"><a href="py.html#安装"><i class="fa fa-check"></i><b>8.2.1</b> 安装</a></li>
+<li class="chapter" data-level="8.2.1" data-path="py.html"><a href="py.html#安装-2"><i class="fa fa-check"></i><b>8.2.1</b> 安装</a></li>
 <li class="chapter" data-level="8.2.2" data-path="py.html"><a href="py.html#编辑器-1"><i class="fa fa-check"></i><b>8.2.2</b> 编辑器</a></li>
+<li class="chapter" data-level="8.2.3" data-path="py.html"><a href="py.html#pycharm的安装与教育许可证"><i class="fa fa-check"></i><b>8.2.3</b> Pycharm的安装与教育许可证</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="py.html"><a href="py.html#变量-1"><i class="fa fa-check"></i><b>8.3</b> 变量</a></li>
-<li class="chapter" data-level="8.4" data-path="py.html"><a href="py.html#数据类型-1"><i class="fa fa-check"></i><b>8.4</b> 数据类型</a>
+<li class="chapter" data-level="8.4" data-path="py.html"><a href="py.html#数据类型-2"><i class="fa fa-check"></i><b>8.4</b> 数据类型</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="py.html"><a href="py.html#类型转换"><i class="fa fa-check"></i><b>8.4.1</b> 类型转换</a></li>
 <li class="chapter" data-level="8.4.2" data-path="py.html"><a href="py.html#算术运算"><i class="fa fa-check"></i><b>8.4.2</b> 算术运算</a></li>
@@ -487,8 +529,9 @@ div.csl-indent {
 <li class="chapter" data-level="8.9.3" data-path="py.html"><a href="py.html#with关键字"><i class="fa fa-check"></i><b>8.9.3</b> with关键字</a></li>
 </ul></li>
 <li class="chapter" data-level="8.10" data-path="py.html"><a href="py.html#os模块"><i class="fa fa-check"></i><b>8.10</b> os模块</a></li>
-<li class="chapter" data-level="8.11" data-path="py.html"><a href="py.html#案例获取高德地图地址信息"><i class="fa fa-check"></i><b>8.11</b> 案例：获取高德地图地址信息</a></li>
-<li class="chapter" data-level="8.12" data-path="py.html"><a href="py.html#面向对象单独成一章"><i class="fa fa-check"></i><b>8.12</b> 面向对象单独成一章</a></li>
+<li class="chapter" data-level="8.11" data-path="py.html"><a href="py.html#python的环境配置"><i class="fa fa-check"></i><b>8.11</b> Python的环境配置</a></li>
+<li class="chapter" data-level="8.12" data-path="py.html"><a href="py.html#案例获取高德地图地址信息"><i class="fa fa-check"></i><b>8.12</b> 案例：获取高德地图地址信息</a></li>
+<li class="chapter" data-level="8.13" data-path="py.html"><a href="py.html#面向对象单独成一章"><i class="fa fa-check"></i><b>8.13</b> 面向对象单独成一章</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="regexp.html"><a href="regexp.html"><i class="fa fa-check"></i><b>9</b> 正则表达式</a>
 <ul>
@@ -500,49 +543,39 @@ div.csl-indent {
 <li class="chapter" data-level="9.1.4" data-path="regexp.html"><a href="regexp.html#分组"><i class="fa fa-check"></i><b>9.1.4</b> 分组</a></li>
 <li class="chapter" data-level="9.1.5" data-path="regexp.html"><a href="regexp.html#非捕获组与断言"><i class="fa fa-check"></i><b>9.1.5</b> 非捕获组与断言</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="regexp.html"><a href="regexp.html#grep命令"><i class="fa fa-check"></i><b>9.2</b> grep命令</a></li>
-<li class="chapter" data-level="9.3" data-path="regexp.html"><a href="regexp.html#sed命令"><i class="fa fa-check"></i><b>9.3</b> sed命令</a>
+<li class="chapter" data-level="9.2" data-path="regexp.html"><a href="regexp.html#r语言stringr包"><i class="fa fa-check"></i><b>9.2</b> R语言stringr包</a>
 <ul>
-<li class="chapter" data-level="9.3.1" data-path="regexp.html"><a href="regexp.html#应用情景"><i class="fa fa-check"></i><b>9.3.1</b> 应用情景</a></li>
-<li class="chapter" data-level="9.3.2" data-path="regexp.html"><a href="regexp.html#文本替换"><i class="fa fa-check"></i><b>9.3.2</b> 文本替换</a></li>
-<li class="chapter" data-level="9.3.3" data-path="regexp.html"><a href="regexp.html#定位行"><i class="fa fa-check"></i><b>9.3.3</b> 定位行</a></li>
-<li class="chapter" data-level="9.3.4" data-path="regexp.html"><a href="regexp.html#替代"><i class="fa fa-check"></i><b>9.3.4</b> 替代</a></li>
+<li class="chapter" data-level="9.2.1" data-path="regexp.html"><a href="regexp.html#stringr包"><i class="fa fa-check"></i><b>9.2.1</b> stringr包</a></li>
+<li class="chapter" data-level="9.2.2" data-path="regexp.html"><a href="regexp.html#应用案例wos数据分析"><i class="fa fa-check"></i><b>9.2.2</b> 应用案例：wos数据分析</a></li>
+<li class="chapter" data-level="9.2.3" data-path="regexp.html"><a href="regexp.html#应用案例数据合并与校对"><i class="fa fa-check"></i><b>9.2.3</b> 应用案例：数据合并与校对</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="regexp.html"><a href="regexp.html#awk命令"><i class="fa fa-check"></i><b>9.4</b> awk命令</a>
+<li class="chapter" data-level="9.3" data-path="regexp.html"><a href="regexp.html#python的re模块"><i class="fa fa-check"></i><b>9.3</b> Python的re模块</a>
 <ul>
-<li class="chapter" data-level="9.4.1" data-path="regexp.html"><a href="regexp.html#入门"><i class="fa fa-check"></i><b>9.4.1</b> 入门</a></li>
-</ul></li>
-<li class="chapter" data-level="9.5" data-path="regexp.html"><a href="regexp.html#r语言stringr包"><i class="fa fa-check"></i><b>9.5</b> R语言stringr包</a>
-<ul>
-<li class="chapter" data-level="9.5.1" data-path="regexp.html"><a href="regexp.html#stringr包"><i class="fa fa-check"></i><b>9.5.1</b> stringr包</a></li>
-<li class="chapter" data-level="9.5.2" data-path="regexp.html"><a href="regexp.html#应用案例wos数据分析"><i class="fa fa-check"></i><b>9.5.2</b> 应用案例：wos数据分析</a></li>
-<li class="chapter" data-level="9.5.3" data-path="regexp.html"><a href="regexp.html#应用案例数据合并与校对"><i class="fa fa-check"></i><b>9.5.3</b> 应用案例：数据合并与校对</a></li>
-</ul></li>
-<li class="chapter" data-level="9.6" data-path="regexp.html"><a href="regexp.html#python的re模块"><i class="fa fa-check"></i><b>9.6</b> Python的re模块</a>
-<ul>
-<li class="chapter" data-level="9.6.1" data-path="regexp.html"><a href="regexp.html#原生字符串"><i class="fa fa-check"></i><b>9.6.1</b> 原生字符串</a></li>
-<li class="chapter" data-level="9.6.2" data-path="regexp.html"><a href="regexp.html#编译"><i class="fa fa-check"></i><b>9.6.2</b> 编译</a></li>
-<li class="chapter" data-level="9.6.3" data-path="regexp.html"><a href="regexp.html#匹配-1"><i class="fa fa-check"></i><b>9.6.3</b> 匹配</a></li>
-<li class="chapter" data-level="9.6.4" data-path="regexp.html"><a href="regexp.html#分割"><i class="fa fa-check"></i><b>9.6.4</b> 分割</a></li>
-<li class="chapter" data-level="9.6.5" data-path="regexp.html"><a href="regexp.html#替换"><i class="fa fa-check"></i><b>9.6.5</b> 替换</a></li>
-<li class="chapter" data-level="9.6.6" data-path="regexp.html"><a href="regexp.html#命名组"><i class="fa fa-check"></i><b>9.6.6</b> 命名组</a></li>
+<li class="chapter" data-level="9.3.1" data-path="regexp.html"><a href="regexp.html#原生字符串"><i class="fa fa-check"></i><b>9.3.1</b> 原生字符串</a></li>
+<li class="chapter" data-level="9.3.2" data-path="regexp.html"><a href="regexp.html#编译"><i class="fa fa-check"></i><b>9.3.2</b> 编译</a></li>
+<li class="chapter" data-level="9.3.3" data-path="regexp.html"><a href="regexp.html#匹配-1"><i class="fa fa-check"></i><b>9.3.3</b> 匹配</a></li>
+<li class="chapter" data-level="9.3.4" data-path="regexp.html"><a href="regexp.html#分割"><i class="fa fa-check"></i><b>9.3.4</b> 分割</a></li>
+<li class="chapter" data-level="9.3.5" data-path="regexp.html"><a href="regexp.html#替换"><i class="fa fa-check"></i><b>9.3.5</b> 替换</a></li>
+<li class="chapter" data-level="9.3.6" data-path="regexp.html"><a href="regexp.html#命名组"><i class="fa fa-check"></i><b>9.3.6</b> 命名组</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="cml.html"><a href="cml.html"><i class="fa fa-check"></i><b>10</b> 命令行</a>
 <ul>
 <li class="chapter" data-level="10.1" data-path="cml.html"><a href="cml.html#命令的基本概念"><i class="fa fa-check"></i><b>10.1</b> 命令的基本概念</a>
 <ul>
-<li class="chapter" data-level="10.1.1" data-path="cml.html"><a href="cml.html#常用命令"><i class="fa fa-check"></i><b>10.1.1</b> 常用命令</a></li>
-<li class="chapter" data-level="10.1.2" data-path="cml.html"><a href="cml.html#标准输入与输出"><i class="fa fa-check"></i><b>10.1.2</b> 标准输入与输出</a></li>
-<li class="chapter" data-level="10.1.3" data-path="cml.html"><a href="cml.html#管道与进程管理"><i class="fa fa-check"></i><b>10.1.3</b> 管道与进程管理</a></li>
-<li class="chapter" data-level="10.1.4" data-path="cml.html"><a href="cml.html#别名"><i class="fa fa-check"></i><b>10.1.4</b> 别名</a></li>
-<li class="chapter" data-level="10.1.5" data-path="cml.html"><a href="cml.html#脚本"><i class="fa fa-check"></i><b>10.1.5</b> 脚本</a></li>
-<li class="chapter" data-level="10.1.6" data-path="cml.html"><a href="cml.html#传参"><i class="fa fa-check"></i><b>10.1.6</b> 传参</a></li>
+<li class="chapter" data-level="10.1.1" data-path="cml.html"><a href="cml.html#fish"><i class="fa fa-check"></i><b>10.1.1</b> fish</a></li>
+<li class="chapter" data-level="10.1.2" data-path="cml.html"><a href="cml.html#常用命令"><i class="fa fa-check"></i><b>10.1.2</b> 常用命令</a></li>
+<li class="chapter" data-level="10.1.3" data-path="cml.html"><a href="cml.html#标准输入与输出"><i class="fa fa-check"></i><b>10.1.3</b> 标准输入与输出</a></li>
+<li class="chapter" data-level="10.1.4" data-path="cml.html"><a href="cml.html#管道与进程管理"><i class="fa fa-check"></i><b>10.1.4</b> 管道与进程管理</a></li>
+<li class="chapter" data-level="10.1.5" data-path="cml.html"><a href="cml.html#别名"><i class="fa fa-check"></i><b>10.1.5</b> 别名</a></li>
+<li class="chapter" data-level="10.1.6" data-path="cml.html"><a href="cml.html#脚本"><i class="fa fa-check"></i><b>10.1.6</b> 脚本</a></li>
+<li class="chapter" data-level="10.1.7" data-path="cml.html"><a href="cml.html#传参"><i class="fa fa-check"></i><b>10.1.7</b> 传参</a></li>
 </ul></li>
 <li class="chapter" data-level="10.2" data-path="cml.html"><a href="cml.html#变量与数据结构"><i class="fa fa-check"></i><b>10.2</b> 变量与数据结构</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="cml.html"><a href="cml.html#数组"><i class="fa fa-check"></i><b>10.2.1</b> 数组</a></li>
-<li class="chapter" data-level="10.2.2" data-path="cml.html"><a href="cml.html#字典-1"><i class="fa fa-check"></i><b>10.2.2</b> 字典</a></li>
+<li class="chapter" data-level="10.2.1" data-path="cml.html"><a href="cml.html#路径变量"><i class="fa fa-check"></i><b>10.2.1</b> 路径变量</a></li>
+<li class="chapter" data-level="10.2.2" data-path="cml.html"><a href="cml.html#数组"><i class="fa fa-check"></i><b>10.2.2</b> 数组</a></li>
+<li class="chapter" data-level="10.2.3" data-path="cml.html"><a href="cml.html#字典-1"><i class="fa fa-check"></i><b>10.2.3</b> 字典</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="cml.html"><a href="cml.html#运算-1"><i class="fa fa-check"></i><b>10.3</b> 运算</a></li>
 <li class="chapter" data-level="10.4" data-path="cml.html"><a href="cml.html#控制流程"><i class="fa fa-check"></i><b>10.4</b> 控制流程</a>
@@ -551,18 +584,45 @@ div.csl-indent {
 <li class="chapter" data-level="10.4.2" data-path="cml.html"><a href="cml.html#循环-2"><i class="fa fa-check"></i><b>10.4.2</b> 循环</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="cml.html"><a href="cml.html#函数"><i class="fa fa-check"></i><b>10.5</b> 函数</a></li>
-<li class="chapter" data-level="10.6" data-path="cml.html"><a href="cml.html#bash内建正则表达式"><i class="fa fa-check"></i><b>10.6</b> bash内建正则表达式</a></li>
-<li class="chapter" data-level="10.7" data-path="cml.html"><a href="cml.html#应用案例"><i class="fa fa-check"></i><b>10.7</b> 应用案例</a></li>
-<li class="chapter" data-level="10.8" data-path="cml.html"><a href="cml.html#通配符"><i class="fa fa-check"></i><b>10.8</b> 通配符</a></li>
-<li class="chapter" data-level="10.9" data-path="cml.html"><a href="cml.html#sed"><i class="fa fa-check"></i><b>10.9</b> sed</a></li>
-<li class="chapter" data-level="10.10" data-path="cml.html"><a href="cml.html#awk"><i class="fa fa-check"></i><b>10.10</b> awk</a></li>
-<li class="chapter" data-level="10.11" data-path="cml.html"><a href="cml.html#正则表达式"><i class="fa fa-check"></i><b>10.11</b> 正则表达式</a></li>
-<li class="chapter" data-level="10.12" data-path="cml.html"><a href="cml.html#r的命令行选项"><i class="fa fa-check"></i><b>10.12</b> R的命令行选项</a>
+<li class="chapter" data-level="10.6" data-path="cml.html"><a href="cml.html#linux文件与目录管理"><i class="fa fa-check"></i><b>10.6</b> Linux文件与目录管理</a>
 <ul>
-<li class="chapter" data-level="10.12.1" data-path="cml.html"><a href="cml.html#linuxunix-shebang"><i class="fa fa-check"></i><b>10.12.1</b> Linux/Unix Shebang</a></li>
-<li class="chapter" data-level="10.12.2" data-path="cml.html"><a href="cml.html#argparse包实例"><i class="fa fa-check"></i><b>10.12.2</b> argparse包实例</a></li>
+<li class="chapter" data-level="10.6.1" data-path="cml.html"><a href="cml.html#linux-链接"><i class="fa fa-check"></i><b>10.6.1</b> Linux 链接</a></li>
 </ul></li>
-<li class="chapter" data-level="10.13" data-path="cml.html"><a href="cml.html#关于命令行与ide"><i class="fa fa-check"></i><b>10.13</b> 关于命令行与IDE</a></li>
+<li class="chapter" data-level="10.7" data-path="cml.html"><a href="cml.html#应用案例"><i class="fa fa-check"></i><b>10.7</b> 应用案例</a></li>
+<li class="chapter" data-level="10.8" data-path="cml.html"><a href="cml.html#通配符与bash内建正则表达式"><i class="fa fa-check"></i><b>10.8</b> 通配符与bash内建正则表达式</a></li>
+<li class="chapter" data-level="10.9" data-path="cml.html"><a href="cml.html#grep命令"><i class="fa fa-check"></i><b>10.9</b> grep命令</a></li>
+<li class="chapter" data-level="10.10" data-path="cml.html"><a href="cml.html#sed命令"><i class="fa fa-check"></i><b>10.10</b> sed命令</a>
+<ul>
+<li class="chapter" data-level="10.10.1" data-path="cml.html"><a href="cml.html#应用情景"><i class="fa fa-check"></i><b>10.10.1</b> 应用情景</a></li>
+<li class="chapter" data-level="10.10.2" data-path="cml.html"><a href="cml.html#sed命令基本结构"><i class="fa fa-check"></i><b>10.10.2</b> sed命令基本结构</a></li>
+<li class="chapter" data-level="10.10.3" data-path="cml.html"><a href="cml.html#s命令substitute"><i class="fa fa-check"></i><b>10.10.3</b> s命令（substitute）</a></li>
+<li class="chapter" data-level="10.10.4" data-path="cml.html"><a href="cml.html#d命令deletep命令print和n命令next"><i class="fa fa-check"></i><b>10.10.4</b> d命令（delete）、p命令（print）和n命令（next）</a></li>
+<li class="chapter" data-level="10.10.5" data-path="cml.html"><a href="cml.html#地址规范"><i class="fa fa-check"></i><b>10.10.5</b> 地址规范</a></li>
+<li class="chapter" data-level="10.10.6" data-path="cml.html"><a href="cml.html#q和q命令quit"><i class="fa fa-check"></i><b>10.10.6</b> q和Q命令（quit）</a></li>
+<li class="chapter" data-level="10.10.7" data-path="cml.html"><a href="cml.html#y命令"><i class="fa fa-check"></i><b>10.10.7</b> y命令</a></li>
+<li class="chapter" data-level="10.10.8" data-path="cml.html"><a href="cml.html#ia和c命令insert-append-change"><i class="fa fa-check"></i><b>10.10.8</b> i、a和c命令（insert, append, change）</a></li>
+<li class="chapter" data-level="10.10.9" data-path="cml.html"><a href="cml.html#命令l命令和z命令zap"><i class="fa fa-check"></i><b>10.10.9</b> =命令、l命令和z命令（zap）</a></li>
+</ul></li>
+<li class="chapter" data-level="10.11" data-path="cml.html"><a href="cml.html#awk命令"><i class="fa fa-check"></i><b>10.11</b> awk命令</a>
+<ul>
+<li class="chapter" data-level="10.11.1" data-path="cml.html"><a href="cml.html#awk入门"><i class="fa fa-check"></i><b>10.11.1</b> awk入门</a></li>
+<li class="chapter" data-level="10.11.2" data-path="cml.html"><a href="cml.html#awk工作原理"><i class="fa fa-check"></i><b>10.11.2</b> awk工作原理</a></li>
+<li class="chapter" data-level="10.11.3" data-path="cml.html"><a href="cml.html#awk分隔符"><i class="fa fa-check"></i><b>10.11.3</b> awk分隔符</a></li>
+<li class="chapter" data-level="10.11.4" data-path="cml.html"><a href="cml.html#awk变量"><i class="fa fa-check"></i><b>10.11.4</b> awk变量</a></li>
+<li class="chapter" data-level="10.11.5" data-path="cml.html"><a href="cml.html#printf输出格式化"><i class="fa fa-check"></i><b>10.11.5</b> printf输出格式化</a></li>
+<li class="chapter" data-level="10.11.6" data-path="cml.html"><a href="cml.html#awk模式"><i class="fa fa-check"></i><b>10.11.6</b> awk模式</a></li>
+<li class="chapter" data-level="10.11.7" data-path="cml.html"><a href="cml.html#流程控制-2"><i class="fa fa-check"></i><b>10.11.7</b> 流程控制</a></li>
+<li class="chapter" data-level="10.11.8" data-path="cml.html"><a href="cml.html#awk数组"><i class="fa fa-check"></i><b>10.11.8</b> awk数组</a></li>
+<li class="chapter" data-level="10.11.9" data-path="cml.html"><a href="cml.html#awk内置函数"><i class="fa fa-check"></i><b>10.11.9</b> awk内置函数</a></li>
+<li class="chapter" data-level="10.11.10" data-path="cml.html"><a href="cml.html#排序函数"><i class="fa fa-check"></i><b>10.11.10</b> 排序函数</a></li>
+</ul></li>
+<li class="chapter" data-level="10.12" data-path="cml.html"><a href="cml.html#数据驱动的编程"><i class="fa fa-check"></i><b>10.12</b> 数据驱动的编程</a></li>
+<li class="chapter" data-level="10.13" data-path="cml.html"><a href="cml.html#linuxunix-shebang与argparse"><i class="fa fa-check"></i><b>10.13</b> Linux/Unix Shebang与argparse</a>
+<ul>
+<li class="chapter" data-level="10.13.1" data-path="cml.html"><a href="cml.html#linuxunix-shebang"><i class="fa fa-check"></i><b>10.13.1</b> Linux/Unix Shebang</a></li>
+<li class="chapter" data-level="10.13.2" data-path="cml.html"><a href="cml.html#argparse模块包"><i class="fa fa-check"></i><b>10.13.2</b> argparse模块（包）</a></li>
+</ul></li>
+<li class="chapter" data-level="10.14" data-path="cml.html"><a href="cml.html#关于命令行与ide"><i class="fa fa-check"></i><b>10.14</b> 关于命令行与IDE</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="web.html"><a href="web.html"><i class="fa fa-check"></i><b>11</b> 网络数据采集</a>
 <ul>
@@ -695,7 +755,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">数据工程讲义：经济学分册</h1>
 <p class="author"><em>史冬波 续本达</em></p>
-<p class="date"><em>2023-11-26</em></p>
+<p class="date"><em>2024-02-03</em></p>
 </div>
 <div id="前言" class="section level1 unnumbered hasAnchor">
 <h1>前言<a href="index.html#前言" class="anchor-section" aria-label="Anchor link to header"></a></h1>
